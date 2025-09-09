@@ -138,7 +138,7 @@ const AdminDashboard = () => {
   const [emailDomains, setEmailDomains] = useState([]);
   const [language, setLanguage] = useState(localStorage.getItem("language") || "en");
   const [isDark, setIsDark] = useState(localStorage.getItem("theme") === "dark");
-  const location = useLocation();
+ 
   const t = translations[language] || translations["en"];
 
   // Initialize chart data from localStorage

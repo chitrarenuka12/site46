@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import sun from "../images/sun.png";
-import moon from "../images/moon.png";
+
 import logo from "../images/logo.png"; // ✅ Import logo properly
 
 const translations = {

@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import client1 from "../images/team2.jpg";
 import client2 from "../images/team3.jpg";
 import client3 from "../images/team4.jpg";
+
 const aiTools = [
   {
     id: 1,
@@ -39,29 +40,29 @@ const aiTools = [
     pattern: "hexagon"
   }
 ];
-const testimonials = [
-  {
-    id: 1,
-    quote: "This AI tool completely transformed our content strategy. What used to take our team days now takes hours. It's like having another expert on the team.",
-    name: 'Sarah Chen',
-    title: 'Head of Marketing, TechGrowth Inc.',
-    avatar: client1
-  },
-  {
-    id: 2,
-    quote: "The code generation is scarily accurate. It doesn't just create boilerplate; it understands the context of our project and suggests optimal solutions.",
-    name: 'Marcus Johnson',
-    title: 'Lead Developer, NovaLabs',
-    avatar: client2
-  },
-  {
-    id: 3,
-    quote: "The data analysis features uncovered insights we had been missing for years. It paid for itself in the first quarter by optimizing our supply chain.",
-    name: 'Elena Rodriguez',
-    title: 'Data Analyst, Fortitude Corp.',
-    avatar: client3
-  }
-];
+// const testimonials = [
+//   {
+//     id: 1,
+//     quote: "This AI tool completely transformed our content strategy. What used to take our team days now takes hours. It's like having another expert on the team.",
+//     name: 'Sarah Chen',
+//     title: 'Head of Marketing, TechGrowth Inc.',
+//     avatar: client1
+//   },
+//   {
+//     id: 2,
+//     quote: "The code generation is scarily accurate. It doesn't just create boilerplate; it understands the context of our project and suggests optimal solutions.",
+//     name: 'Marcus Johnson',
+//     title: 'Lead Developer, NovaLabs',
+//     avatar: client2
+//   },
+//   {
+//     id: 3,
+//     quote: "The data analysis features uncovered insights we had been missing for years. It paid for itself in the first quarter by optimizing our supply chain.",
+//     name: 'Elena Rodriguez',
+//     title: 'Data Analyst, Fortitude Corp.',
+//     avatar: client3
+//   }
+// ];
 const translations = {
   en: {
     heroTitle: "AI Tools for the Future",
@@ -101,17 +102,20 @@ const translations = {
       {
         quote: "This AI tool completely transformed our content strategy. What used to take our team days now takes hours. It's like having another expert on the team.",
         name: 'Sarah Chen',
-        title: 'Head of Marketing, TechGrowth Inc.'
+        title: 'Head of Marketing, TechGrowth Inc.',
+        avatar: client1
       },
       {
         quote: "The code generation is scarily accurate. It doesn't just create boilerplate; it understands the context of our project and suggests optimal solutions.",
         name: 'Marcus Johnson',
-        title: 'Lead Developer, NovaLabs'
+        title: 'Lead Developer, NovaLabs',
+        avatar: client2
       },
       {
         quote: "The data analysis features uncovered insights we had been missing for years. It paid for itself in the first quarter by optimizing our supply chain.",
         name: 'Elena Rodriguez',
-        title: 'Data Analyst, Fortitude Corp.'
+        title: 'Data Analyst, Fortitude Corp.',
+        avatar: client3
       }
     ]
   },
@@ -153,17 +157,20 @@ const translations = {
       {
         quote: "أداة الذكاء الاصطناعي هذه غيرت استراتيجتنا بالكامل. ما كان يستغرق أيامًا أصبح يستغرق ساعات فقط. إنها كأنها خبير آخر في الفريق.",
         name: 'سارة تشين',
-        title: 'رئيسة التسويق، تك جروث إنك.'
+        title: 'رئيسة التسويق، تك جروث إنك.',
+        avatar: client1
       },
       {
         quote: "توليد الكود دقيق بشكل مخيف. لا ينشئ فقط كودًا مبدئيًا؛ بل يفهم سياق المشروع ويقترح حلولاً مثالية.",
         name: 'ماركوس جونسون',
-        title: 'المطور الرئيسي، نوفالابز'
+        title: 'المطور الرئيسي، نوفالابز',
+        avatar: client2
       },
       {
         quote: "ميزات تحليل البيانات كشفت عن رؤى كنا نفتقدها لسنوات. وفرت لنا الكثير في الربع الأول من خلال تحسين سلسلة التوريد.",
         name: 'إلينا رودريغيز',
-        title: 'محللة بيانات، فورتتيود كورب.'
+        title: 'محللة بيانات، فورتتيود كورب.',
+        avatar: client3
       }
     ]
   },
@@ -205,17 +212,20 @@ const translations = {
       {
         quote: "הכלי הזה שינה לחלוטין את אסטרטגיית התוכן שלנו. מה שלקח ימים, עכשיו לוקח שעות. זה כמו עוד מומחה בצוות.",
         name: 'שרה צ׳ן',
-        title: 'ראש מחלקת שיווק, TechGrowth Inc.'
+        title: 'ראש מחלקת שיווק, TechGrowth Inc.',
+        avatar: client1
       },
       {
         quote: "היצירה של הקוד מדויקת בצורה מפחידה. זה לא רק יוצר תבניות; זה מבין את ההקשר ומציע פתרונות אופטימליים.",
         name: 'מרקוס ג׳ונסון',
-        title: 'מפתח ראשי, NovaLabs'
+        title: 'מפתח ראשי, NovaLabs',
+        avatar: client2
       },
       {
         quote: "הפיצ׳רים של ניתוח הנתונים חשפו תובנות שהחסרנו במשך שנים. זה השתלם ברבעון הראשון על ידי אופטימיזציה של שרשרת האספקה.",
         name: 'אלנה רודריגז',
-        title: 'אנליסטית נתונים, Fortitude Corp.'
+        title: 'אנליסטית נתונים, Fortitude Corp.',
+        avatar: client3
       }
     ]
   }
@@ -264,9 +274,9 @@ const Home1 = () => {
             muted
           />
           {/* Overlay and Content */}
-          <div className="absolute inset-0 bg-black/70 dark:bg-black/80 z-10 flex flex-col justify-center items-center text-center px-4">
+          <div className="absolute inset-0 bg-black/70  z-10 flex flex-col justify-center items-center text-center px-4">
             <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-6 drop-shadow-lg">{translations[language].heroTitle}</h1>
-            <p className="text-lg md:text-2xl text-gray-200 mb-8 max-w-2xl mx-auto">{translations[language].heroDesc}</p>
+            <p className="text-lg md:text-2xl text-white mb-8 max-w-2xl mx-auto">{translations[language].heroDesc}</p>
             <div className="flex gap-4 justify-center">
               <button className="px-8 py-3 bg-purple-600 hover:bg-purple-700 rounded-full font-semibold text-white shadow-lg transition" onClick={()=>handleGetStarted("/contact")}>{translations[language].getStarted}</button>
               <button className="px-8 py-3 bg-white/20 hover:bg-white/30 rounded-full font-semibold text-white shadow-lg transition border border-white" onClick={()=>handleGetStarted("/services")}>{translations[language].learnMore}</button>
@@ -284,9 +294,8 @@ const Home1 = () => {
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-bold text-center text-black dark:text-white mb-12"
-        >
-          {translations[language].futureTitle}
-        </motion.h2>
+          dangerouslySetInnerHTML={{ __html: translations[language].futureTitle }}
+        />
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -519,10 +528,8 @@ const Home1 = () => {
               }[language]}
             </p>
           </div>
-
-          {/* Testimonials Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {translations[language].testimonials.map((testimonial, idx) => (
+            {(translations[language].testimonials || []).map((testimonial, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 40, scale: 0.9 }}
@@ -532,15 +539,17 @@ const Home1 = () => {
                 whileHover={{ scale: 1.04, boxShadow: "0 8px 32px 0 rgba(128,0,255,0.12)" }}
                 className="bg-white dark:bg-black p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-4 border-purple-200 dark:border-purple-700 flex flex-col"
               >
-                {/* Quote */}
                 <p className="italic mb-6 flex-grow text-gray-700 dark:text-white">"{testimonial.quote}"</p>
-                {/* Author */}
                 <div className="flex items-center">
-                  {/* Avatar or Initial */}
                   <div className="flex-shrink-0 mr-4">
-                    <div className="h-12 w-12 bg-purple-100 dark:bg-purple-700 rounded-full flex items-center justify-center text-purple-700 dark:text-white font-bold animate-pulse">
-                      {testimonial.name.charAt(0)}
-                    </div>
+                    {/* If you want to show avatar only for English, or if available */}
+                    {testimonial.avatar && (
+                      <img
+                        src={testimonial.avatar}
+                        alt={testimonial.name}
+                        className="h-12 w-12 rounded-full object-cover  border-purple-200 dark:border-purple-700"
+                      />
+                    )}
                   </div>
                   <div>
                     <h4 className="text-sm font-semibold text-black dark:text-white">{testimonial.name}</h4>
