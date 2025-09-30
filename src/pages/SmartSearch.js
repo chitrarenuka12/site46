@@ -4,6 +4,21 @@ import heroVideo from "../images/smart-search.mp4";
 import { useNavigate } from "react-router-dom";
 import search from "../images/smartsearch.jpg";
 
+// Import the downloaded icons
+import searchIcon from "../images/search.png";
+import discoverIcon from "../images/thunder.png";
+import compareIcon from "../images/barchart.png";
+import deployIcon from "../images/robot.png";
+import chat from "../images/chat.png";
+import ecommerce from "../images/ecommerce.png";
+import healthcare from "../images/medical-app.png";
+import education from "../images/university.png";
+import finance from "../images/accounts.png";
+import matchingIcon from "../images/search.png";
+import supportIcon from "../images/chat.png";
+import integrationIcon from "../images/integration.png";
+import personalizedIcon from "../images/schedule.png";
+
 // Translations object for all UI text and arrays
 const translations = {
   en: {
@@ -26,10 +41,10 @@ const translations = {
     ],
     howWorksTitle: "How It Works",
     howWorksSteps: [
-      { icon: "🔎", title: "Search", desc: "Enter your requirements or keywords." },
-      { icon: "⚡", title: "Discover", desc: "View matching AI tools and solutions instantly." },
-      { icon: "📊", title: "Compare", desc: "Analyze features, pricing, and reviews." },
-      { icon: "🚀", title: "Deploy", desc: "Integrate or launch with one click." }
+      { icon: searchIcon, title: "Search", desc: "Enter your requirements or keywords." },
+      { icon: discoverIcon, title: "Discover", desc: "View matching AI tools and solutions instantly." },
+      { icon: compareIcon, title: "Compare", desc: "Analyze features, pricing, and reviews." },
+      { icon: deployIcon, title: "Deploy", desc: "Integrate or launch with one click." }
     ],
     overviewTitle: "Why Smart Search?",
     overviewDesc: "Our platform combines advanced search algorithms, real-time filtering, and personalized recommendations to help you discover the perfect AI tool for any business need.",
@@ -42,19 +57,19 @@ const translations = {
     overviewBtn: "Learn More",
     useCasesTitle: "Popular Smart Search Use Cases",
     useCases: [
-      { icon: "💬", title: "Customer Support", desc: "Find chatbots and virtual assistants for instant help." },
-      { icon: "🛒", title: "E-Commerce", desc: "Discover recommendation engines and analytics tools." },
-      { icon: "🏥", title: "Healthcare", desc: "Search for diagnostic and scheduling AI solutions." },
-      { icon: "🎓", title: "Education", desc: "Explore tutoring and content generation platforms." },
-      { icon: "🏦", title: "Finance", desc: "Locate fraud detection and financial analysis models." }
+      { icon: chat, title: "Customer Support", desc: "Find chatbots and virtual assistants for instant help." },
+      { icon: ecommerce, title: "E-Commerce", desc: "Discover recommendation engines and analytics tools." },
+      { icon: healthcare, title: "Healthcare", desc: "Search for diagnostic and scheduling AI solutions." },
+      { icon: education, title: "Education", desc: "Explore tutoring and content generation platforms." },
+      { icon: finance, title: "Finance", desc: "Locate fraud detection and financial analysis models." }
     ],
     highlightsTitle: "Smart Search Highlights",
     highlightsDesc: "Discover the unique features that make Smart Search the best way to find and deploy AI tools for your business.",
     highlights: [
-      { icon: "🔎", title: "Intelligent Matching", desc: "AI-powered algorithms match your needs to the best tools." },
-      { icon: "📞", title: "Instant Support", desc: "Get help and recommendations in real time." },
-      { icon: "🔗", title: "Easy Integration", desc: "Connect and deploy tools with a few clicks." },
-      { icon: "📅", title: "Personalized Experience", desc: "Results and suggestions tailored for you." }
+      { icon: matchingIcon, title: "Intelligent Matching", desc: "AI-powered algorithms match your needs to the best tools." },
+      { icon: supportIcon, title: "Instant Support", desc: "Get help and recommendations in real time." },
+      { icon: integrationIcon, title: "Easy Integration", desc: "Connect and deploy tools with a few clicks." },
+      { icon: personalizedIcon, title: "Personalized Experience", desc: "Results and suggestions tailored for you." }
     ],
     ctaTitle: "Ready to Supercharge Your Workflow?",
     ctaDesc: "Start searching for the perfect AI tool and unlock new possibilities for your business.",
@@ -80,10 +95,10 @@ const translations = {
     ],
     howWorksTitle: "كيف يعمل",
     howWorksSteps: [
-      { icon: "🔎", title: "ابحث", desc: "أدخل متطلباتك أو الكلمات المفتاحية." },
-      { icon: "⚡", title: "اكتشف", desc: "شاهد الأدوات والحلول المطابقة فوراً." },
-      { icon: "📊", title: "قارن", desc: "حلل الميزات والأسعار والمراجعات." },
-      { icon: "🚀", title: "طبق", desc: "ادمج أو أطلق بنقرة واحدة." }
+      { icon: searchIcon, title: "ابحث", desc: "أدخل متطلباتك أو الكلمات المفتاحية." },
+      { icon: discoverIcon, title: "اكتشف", desc: "شاهد الأدوات والحلول المطابقة فوراً." },
+      { icon: compareIcon, title: "قارن", desc: "حلل الميزات والأسعار والمراجعات." },
+      { icon: deployIcon, title: "طبق", desc: "ادمج أو أطلق بنقرة واحدة." }
     ],
     overviewTitle: "لماذا البحث الذكي؟",
     overviewDesc: "منصتنا تجمع بين خوارزميات بحث متقدمة وتصفية لحظية وتوصيات مخصصة لتساعدك في اكتشاف أفضل أداة ذكاء اصطناعي لأي احتياج.",
@@ -96,19 +111,19 @@ const translations = {
     overviewBtn: "اعرف المزيد",
     useCasesTitle: "حالات استخدام البحث الذكي",
     useCases: [
-      { icon: "💬", title: "دعم العملاء", desc: "اعثر على روبوتات الدردشة والمساعدين الافتراضيين." },
-      { icon: "🛒", title: "التجارة الإلكترونية", desc: "اكتشف محركات التوصية وأدوات التحليل." },
-      { icon: "🏥", title: "الرعاية الصحية", desc: "ابحث عن حلول التشخيص والجدولة الذكية." },
-      { icon: "🎓", title: "التعليم", desc: "استكشف منصات التدريس وتوليد المحتوى." },
-      { icon: "🏦", title: "المالية", desc: "اعثر على نماذج كشف الاحتيال والتحليل المالي." }
+      { icon: chat, title: "دعم العملاء", desc: "اعثر على روبوتات الدردشة والمساعدين الافتراضيين." },
+      { icon: ecommerce, title: "التجارة الإلكترونية", desc: "اكتشف محركات التوصية وأدوات التحليل." },
+      { icon: healthcare, title: "الرعاية الصحية", desc: "ابحث عن حلول التشخيص والجدولة الذكية." },
+      { icon: education, title: "التعليم", desc: "استكشف منصات التدريس وتوليد المحتوى." },
+      { icon: finance, title: "المالية", desc: "اعثر على نماذج كشف الاحتيال والتحليل المالي." }
     ],
     highlightsTitle: "أبرز ميزات البحث الذكي",
     highlightsDesc: "اكتشف الميزات الفريدة التي تجعل البحث الذكي أفضل وسيلة للعثور على أدوات الذكاء الاصطناعي وتطبيقها.",
     highlights: [
-      { icon: "🔎", title: "مطابقة ذكية", desc: "خوارزميات الذكاء الاصطناعي تطابق احتياجاتك مع أفضل الأدوات." },
-      { icon: "📞", title: "دعم فوري", desc: "احصل على المساعدة والتوصيات فوراً." },
-      { icon: "🔗", title: "دمج سهل", desc: "اتصل وطبق الأدوات بسهولة." },
-      { icon: "📅", title: "تجربة مخصصة", desc: "نتائج وتوصيات تناسبك." }
+      { icon: matchingIcon, title: "مطابقة ذكية", desc: "خوارزميات الذكاء الاصطناعي تطابق احتياجاتك مع أفضل الأدوات." },
+      { icon: supportIcon, title: "دعم فوري", desc: "احصل على المساعدة والتوصيات فوراً." },
+      { icon: integrationIcon, title: "دمج سهل", desc: "اتصل وطبق الأدوات بسهولة." },
+      { icon: personalizedIcon, title: "تجربة مخصصة", desc: "نتائج وتوصيات تناسبك." }
     ],
     ctaTitle: "جاهز لتعزيز سير عملك؟",
     ctaDesc: "ابدأ البحث عن أداة الذكاء الاصطناعي المثالية وافتح إمكانيات جديدة لعملك.",
@@ -134,10 +149,10 @@ const translations = {
     ],
     howWorksTitle: "איך זה עובד",
     howWorksSteps: [
-      { icon: "🔎", title: "חפש", desc: "הזן דרישות או מילות מפתח." },
-      { icon: "⚡", title: "גלה", desc: "ראה כלים ופתרונות מתאימים מיד." },
-      { icon: "📊", title: "השווה", desc: "נתח תכונות, מחירים וביקורות." },
-      { icon: "🚀", title: "יישם", desc: "שלב או הפעל בלחיצה אחת." }
+      { icon: searchIcon, title: "חפש", desc: "הזן דרישות או מילות מפתח." },
+      { icon: discoverIcon, title: "גלה", desc: "ראה כלים ופתרונות מתאימים מיד." },
+      { icon: compareIcon, title: "השווה", desc: "נתח תכונות, מחירים וביקורות." },
+      { icon: deployIcon, title: "יישם", desc: "שלב או הפעל בלחיצה אחת." }
     ],
     overviewTitle: "למה חיפוש חכם?",
     overviewDesc: "הפלטפורמה שלנו משלבת אלגוריתמים מתקדמים, סינון בזמן אמת והמלצות מותאמות כדי לעזור לך למצוא את כלי ה-AI המושלם לכל צורך עסקי.",
@@ -150,19 +165,19 @@ const translations = {
     overviewBtn: "למידע נוסף",
     useCasesTitle: "שימושים נפוצים בחיפוש חכם",
     useCases: [
-      { icon: "💬", title: "תמיכת לקוחות", desc: "מצא צ'אטבוטים ומסייעים וירטואליים." },
-      { icon: "🛒", title: "מסחר אלקטרוני", desc: "גלה מנועי המלצה וכלי אנליטיקה." },
-      { icon: "🏥", title: "בריאות", desc: "חפש פתרונות אבחון ותזמון חכמים." },
-      { icon: "🎓", title: "חינוך", desc: "גלה פלטפורמות לימוד ויצירת תוכן." },
-      { icon: "🏦", title: "פיננסים", desc: "מצא מודלים לזיהוי הונאות וניתוח פיננסי." }
+      { icon: chat, title: "תמיכת לקוחות", desc: "מצא צ'אטבוטים ומסייעים וירטואליים." },
+      { icon: ecommerce, title: "מסחר אלקטרוני", desc: "גלה מנועי המלצה וכלי אנליטיקה." },
+      { icon: healthcare, title: "בריאות", desc: "חפש פתרונות אבחון ותזמון חכמים." },
+      { icon: education, title: "חינוך", desc: "גלה פלטפורמות לימוד ויצירת תוכן." },
+      { icon: finance, title: "פיננסים", desc: "מצא מודלים לזיהוי הונאות וניתוח פיננסי." }
     ],
     highlightsTitle: "הדגשים בחיפוש חכם",
     highlightsDesc: "גלה את התכונות שהופכות את החיפוש החכם לדרך הטובה ביותר למצוא וליישם כלי AI לעסק שלך.",
     highlights: [
-      { icon: "🔎", title: "התאמה חכמה", desc: "אלגוריתמים מבוססי AI מתאימים את הצורך שלך לכלי הטוב ביותר." },
-      { icon: "📞", title: "תמיכה מידית", desc: "קבל עזרה והמלצות בזמן אמת." },
-      { icon: "🔗", title: "שילוב קל", desc: "חבר ויישם כלים בכמה קליקים." },
-      { icon: "📅", title: "חוויית משתמש מותאמת", desc: "תוצאות והמלצות לפי הצורך שלך." }
+      { icon: matchingIcon, title: "התאמה חכמה", desc: "אלגוריתמים מבוססי AI מתאימים את הצורך שלך לכלי הטוב ביותר." },
+      { icon: supportIcon, title: "תמיכה מידית", desc: "קבל עזרה והמלצות בזמן אמת." },
+      { icon: integrationIcon, title: "שילוב קל", desc: "חבר ויישם כלים בכמה קליקים." },
+      { icon: personalizedIcon, title: "חוויית משתמש מותאמת", desc: "תוצאות והמלצות לפי הצורך שלך." }
     ],
     ctaTitle: "מוכן להאיץ את העבודה שלך?",
     ctaDesc: "התחל לחפש את כלי ה-AI המושלם ופתח אפשרויות חדשות לעסק שלך.",
@@ -236,7 +251,7 @@ function SmartSearch() {
         </div>
       </section>
       {/* Features & Benefits - Unique Style */}
-      <section className="py-20 px-4 bg-white dark:bg-black">
+      <section className="py-20 px-4  bg-purple-50 dark:bg-black">
         <motion.div
           className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-12"
           initial={{ opacity: 0, y: 40 }}
@@ -288,17 +303,18 @@ function SmartSearch() {
       <section className="py-8 px-4 bg-white dark:bg-black">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-black dark:text-white">{t.howWorksTitle}</h2>
+          {/* How It Works flip cards */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-8">
             {t.howWorksSteps.map((step, idx) => (
               <div key={idx} className="flip-card w-64 h-64">
                 <div className="flip-card-inner group relative w-full h-full">
-                  {/* Front Side */}
                   <div className="flip-card-front absolute w-full h-full bg-white dark:bg-gray-900 rounded-2xl shadow-lg border border-purple-100 dark:border-purple-700 flex flex-col items-center justify-center text-center transition-transform duration-500 group-hover:rotate-y-180">
-                    <div className="w-16 h-16 flex items-center justify-center rounded-full bg-purple-700 dark:bg-purple-400 text-white text-3xl font-bold mb-4">{step.icon}</div>
+                    <div className="w-16 h-16 flex items-center justify-center rounded-full bg-purple-700 dark:bg-purple-400 text-white text-3xl font-bold mb-4">
+                      <img src={step.icon} alt={step.title} className="w-10 h-10 object-contain" />
+                    </div>
                     <h3 className="text-xl font-bold text-purple-700 dark:text-purple-300 mb-2">{step.title}</h3>
                     <p className="text-gray-700 dark:text-gray-300">Step {idx + 1}</p>
                   </div>
-                  {/* Back Side */}
                   <div className="flip-card-back absolute w-full h-full bg-purple-700 dark:bg-purple-400 rounded-2xl shadow-lg flex flex-col items-center justify-center text-center text-white font-semibold px-4 transition-transform duration-500 group-hover:rotate-y-0 group-hover:scale-105" style={{transform: 'rotateY(180deg)'}}>
                     <div className="text-lg mb-2">{step.title}</div>
                     <div className="text-sm">{step.desc}</div>
@@ -340,7 +356,7 @@ function SmartSearch() {
         </div>
       </section>
       {/* AI Chatbot Use Cases - Horizontal Scroll Section */}
-      <section className="py-5 px-4 bg-white dark:bg-black">
+      <section className="py-5 px-4  bg-purple-50 dark:bg-black">
         <div className="max-w-7xl mx-auto">
           <motion.h2
             className="text-4xl font-bold text-center mb-10 text-black dark:text-white"
@@ -367,7 +383,9 @@ function SmartSearch() {
                 transition={{ duration: 0.6, delay: idx * 0.12 }}
                 viewport={{ once: true }}
               >
-                <div className="w-14 h-14 flex items-center justify-center rounded-full bg-purple-700 dark:bg-purple-400 text-white dark:text-black text-3xl font-bold mb-4">{use.icon}</div>
+                <div className="w-14 h-14 flex items-center justify-center rounded-full bg-purple-700 dark:bg-purple-400 text-white dark:text-black text-3xl font-bold mb-4">
+                  <img src={use.icon} alt={use.title} className="w-8 h-8 object-contain" />
+                </div>
                 <h3 className="text-xl font-bold text-purple-700 dark:text-purple-300 mb-2 text-center">{use.title}</h3>
                 <p className="text-black dark:text-white text-sm text-center">{use.desc}</p>
               </motion.div>
@@ -396,7 +414,9 @@ function SmartSearch() {
             <div className="absolute left-4 top-0 bottom-0 w-1 bg-purple-300 dark:bg-purple-700 rounded-full"></div>
             {t.highlights.map((f, i) => (
               <div key={i} className="flex items-center mb-10 last:mb-0 relative z-10">
-                <div className="w-10 h-10 flex items-center justify-center rounded-full bg-purple-700 dark:bg-purple-400 text-white text-xl font-bold mr-6 shadow-lg">{f.icon}</div>
+                <div className="w-10 h-10 flex items-center justify-center rounded-full bg-purple-700 dark:bg-purple-400 text-white text-xl font-bold mr-6 shadow-lg">
+                  <img src={f.icon} alt={f.title} className="w-6 h-6 object-contain" />
+                </div>
                 <div>
                   <h4 className="text-lg font-bold text-black dark:text-white mb-1">{f.title}</h4>
                   <p className="text-black dark:text-white text-sm max-w-xs">{f.desc}</p>

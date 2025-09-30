@@ -3,7 +3,10 @@ import { motion } from "framer-motion";
 import heroVideo from "../images/security-solutions.mp4";
 import { useNavigate } from "react-router-dom";
 import security from "../images/security.jpg";
-
+import search from "../images/search.png";
+import thunder from "../images/thunder.png";
+import robot from "../images/robot.png";
+import barcahart from "../images/barchart.png";
 // Translations object for all UI text and arrays
 const translations = {
   en: {
@@ -27,10 +30,10 @@ const translations = {
     ],
     howWorksTitle: "How It Works",
     howWorksSteps: [
-      { icon: "🔍", title: "Monitor & Analyze", desc: "AI scans your systems for threats and vulnerabilities." },
-      { icon: "⚡", title: "Detect & Alert", desc: "Instantly identify suspicious activity and notify your team." },
-      { icon: "🤖", title: "Automate Response", desc: "AI takes action to contain and resolve incidents." },
-      { icon: "📊", title: "Report & Improve", desc: "Get detailed reports and recommendations for future protection." }
+      { icon: search, title: "Monitor & Analyze", desc: "AI scans your systems for threats and vulnerabilities." },
+      { icon: thunder, title: "Detect & Alert", desc: "Instantly identify suspicious activity and notify your team." },
+      { icon: robot, title: "Automate Response", desc: "AI takes action to contain and resolve incidents." },
+      { icon: barcahart, title: "Report & Improve", desc: "Get detailed reports and recommendations for future protection." }
     ],
     overviewTitle: "What Makes Our Security Solutions Unique?",
     overviewDesc: "Our AI security platform combines advanced analytics, real-time monitoring, and automated response to keep your business safe from evolving threats.",
@@ -83,10 +86,10 @@ const translations = {
     ],
     howWorksTitle: "كيف يعمل",
     howWorksSteps: [
-      { icon: "🔍", title: "المراقبة والتحليل", desc: "يفحص الذكاء الاصطناعي الأنظمة بحثاً عن التهديدات والثغرات." },
-      { icon: "⚡", title: "الكشف والتنبيه", desc: "تحديد النشاط المشبوه فوراً وإبلاغ الفريق." },
-      { icon: "🤖", title: "استجابة تلقائية", desc: "يتخذ الذكاء الاصطناعي إجراءات لاحتواء الحوادث وحلها." },
-      { icon: "📊", title: "التقارير والتحسين", desc: "الحصول على تقارير مفصلة وتوصيات للحماية المستقبلية." }
+      { icon: search, title: "المراقبة والتحليل", desc: "يفحص الذكاء الاصطناعي الأنظمة بحثاً عن التهديدات والثغرات." },
+      { icon: thunder, title: "الكشف والتنبيه", desc: "تحديد النشاط المشبوه فوراً وإبلاغ الفريق." },
+      { icon: robot, title: "استجابة تلقائية", desc: "يتخذ الذكاء الاصطناعي إجراءات لاحتواء الحوادث وحلها." },
+      { icon: barcahart, title: "التقارير والتحسين", desc: "الحصول على تقارير مفصلة وتوصيات للحماية المستقبلية." }
     ],
     overviewTitle: "ما الذي يجعل حلولنا الأمنية فريدة؟",
     overviewDesc: "يجمع نظام الأمن الذكي بين التحليلات المتقدمة والمراقبة اللحظية والاستجابة التلقائية لحماية عملك من التهديدات المتطورة.",
@@ -139,10 +142,10 @@ const translations = {
     ],
     howWorksTitle: "איך זה עובד",
     howWorksSteps: [
-      { icon: "🔍", title: "ניטור וניתוח", desc: "ה-AI סורק מערכות לאיומים ופגיעויות." },
-      { icon: "⚡", title: "זיהוי והתראה", desc: "זיהוי פעילות חשודה והתרעה לצוות." },
-      { icon: "🤖", title: "תגובה אוטומטית", desc: "ה-AI פועל לטיפול באירועים." },
-      { icon: "📊", title: "דיווח ושיפור", desc: "קבלת דוחות והמלצות להגנה עתידית." }
+      { icon: search, title: "ניטור וניתוח", desc: "ה-AI סורק מערכות לאיומים ופגיעויות." },
+      { icon: thunder, title: "זיהוי והתראה", desc: "זיהוי פעילות חשודה והתרעה לצוות." },
+      { icon: robot, title: "תגובה אוטומטית", desc: "ה-AI פועל לטיפול באירועים." },
+      { icon: barcahart, title: "דיווח ושיפור", desc: "קבלת דוחות והמלצות להגנה עתידית." }
     ],
     overviewTitle: "מה מייחד את פתרונות האבטחה שלנו?",
     overviewDesc: "פלטפורמת האבטחה שלנו משלבת אנליטיקה מתקדמת, ניטור בזמן אמת ותגובה אוטומטית כדי להגן על העסק שלך מאיומים מתפתחים.",
@@ -291,7 +294,7 @@ function SecuritySolutions() {
         </motion.div>
       </section>
       {/* 3. How It Works */}
-      <section className="py-8 px-4 bg-white dark:bg-black">
+      <section className="py-8 px-4 bg-purple-50 dark:bg-black">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-black dark:text-white">{t.howWorksTitle}</h2>
           <div className="flex flex-col md:flex-row items-center justify-center gap-8">
@@ -300,7 +303,7 @@ function SecuritySolutions() {
                 <div className="flip-card-inner group relative w-full h-full">
                   {/* Front Side */}
                   <div className="flip-card-front absolute w-full h-full bg-white dark:bg-gray-900 rounded-2xl shadow-lg border border-purple-100 dark:border-purple-700 flex flex-col items-center justify-center text-center transition-transform duration-500 group-hover:rotate-y-180">
-                    <div className="w-16 h-16 flex items-center justify-center rounded-full bg-purple-700 dark:bg-purple-400 text-white text-3xl font-bold mb-4">{step.icon}</div>
+                    <div className="w-16 h-16 flex items-center justify-center rounded-full bg-purple-700 dark:bg-purple-400 text-white text-3xl font-bold mb-4"><img src={step.icon} alt={step.title} className="w-8 h-8 object-contain" /></div>
                     <h3 className="text-xl font-bold text-purple-700 dark:text-purple-300 mb-2">{step.title}</h3>
                     <p className="text-gray-700 dark:text-gray-300">Step {idx + 1}</p>
                   </div>

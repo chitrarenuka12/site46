@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import blogVideo from "../images/blog-ai.mp4";
-
+import brain from "../images/brain.png";
+import nlp from "../images/nlp.png";
+import transform from "../images/transform.png";
+import processing from "../images/organization.png";
 // Add translations object for all UI text and arrays
 const translations = {
   en: {
@@ -104,7 +107,7 @@ const featuredArticles = [
     date: "May 15, 2023",
     readTime: "8 min read",
     category: "Generative AI",
-    gradient: "from-purple-600 via-blue-600 to-teal-600"
+    gradient: "from-purple-600 to-purple-800"
   },
   {
     title: "Ethical Considerations in AI Development",
@@ -113,7 +116,7 @@ const featuredArticles = [
     date: "April 28, 2023",
     readTime: "12 min read",
     category: "AI Ethics",
-    gradient: "from-rose-600 via-amber-600 to-orange-600"
+    gradient: "from-purple-500 to-purple-700"
   },
   {
     title: "How AI is Transforming Healthcare Diagnostics",
@@ -122,7 +125,7 @@ const featuredArticles = [
     date: "June 3, 2023",
     readTime: "10 min read",
     category: "AI in Healthcare",
-    gradient: "from-green-600 via-emerald-600 to-lime-600"
+    gradient: "from-purple-400 to-purple-600"
   }
 ];
 
@@ -133,7 +136,7 @@ const concepts = [
     analogy: "Like a team of specialists where each person focuses on a specific pattern, then combines their findings.",
     applications: "Image recognition, speech recognition, natural language processing",
     complexity: "Intermediate",
-    icon: "🧠"
+    icon: brain
   },
   {
     term: "Transformers",
@@ -141,7 +144,7 @@ const concepts = [
     analogy: "Like reading a sentence while constantly checking how each word relates to all other words.",
     applications: "Language translation, text generation, chatbots",
     complexity: "Advanced",
-    icon: "🔀"
+    icon: transform
   },
   {
     term: "Generative Adversarial Networks",
@@ -149,7 +152,7 @@ const concepts = [
     analogy: "Like an art forger and an art expert competing - the forger improves until the expert can't tell real from fake.",
     applications: "Image generation, video generation, art creation",
     complexity: "Advanced",
-    icon: "🎨"
+    icon: processing
   },
   {
     term: "Natural Language Processing",
@@ -157,7 +160,7 @@ const concepts = [
     analogy: "Like teaching a computer to understand context, sarcasm, and nuance in human communication.",
     applications: "Chatbots, sentiment analysis, text summarization",
     complexity: "Intermediate",
-    icon: "💬"
+    icon: nlp
   }
 ];
 
@@ -232,50 +235,113 @@ function Blog() {
         </div>
       </section>
       {/* Featured Articles Section */}
-      <section className="py-16 px-4 text-black dark:text-white overflow-hidden">
+      <section className="py-16 px-4 text-black dark:text-white overflow-hidden bg-gradient-to-br from-purple-50 to-white dark:from-gray-900 dark:to-black">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-4 text-purple-700 dark:text-purple-300">{t.featuredTitle}</h2>
-          <p className="text-xl text-center text-gray-700 dark:text-gray-200 mb-12 max-w-3xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold text-center mb-6 text-purple-700 dark:text-purple-300"
+          >
+            {t.featuredTitle}
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-xl text-center text-gray-700 dark:text-gray-200 mb-16 max-w-3xl mx-auto"
+          >
             {t.featuredDesc}
-          </p>
-          <div className="relative flex justify-center items-center min-h-[28rem] overflow-visible">
-            <div className="relative z-10 flex flex-col justify-center items-start px-20 max-w-2xl w-full border-4 border-purple-700 dark:border-purple-400 rounded-2xl bg-white dark:bg-black">
-              <span className="inline-block px-4 py-1 bg-purple-700/10 backdrop-blur-sm rounded-full text-sm font-medium mb-6 text-purple-700 dark:text-purple-300">
+          </motion.p>
+          
+          <div className="relative flex justify-center items-center min-h-[32rem] overflow-visible">
+            {/* Background gradient cards - Fixed to only use purple */}
+            <div className="absolute inset-0 flex justify-center items-center">
+              <div className="absolute w-96 h-80 rounded-3xl bg-gradient-to-br from-purple-400 to-purple-600 opacity-20 blur-xl transform rotate-6 scale-110"></div>
+              <div className="absolute w-96 h-80 rounded-3xl bg-gradient-to-br from-purple-500 to-purple-700 opacity-10 blur-2xl transform -rotate-3 scale-125"></div>
+            </div>
+
+            {/* Main content card */}
+            <motion.div
+              key={currentFeature}
+              initial={{ opacity: 0, scale: 0.9, rotateY: 15 }}
+              animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+              exit={{ opacity: 0, scale: 0.9, rotateY: -15 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="relative z-10 flex flex-col justify-center items-start p-8 md:p-12 max-w-3xl w-full bg-white/90 dark:bg-black/90 backdrop-blur-xl rounded-3xl shadow-2xl border border-purple-200/50 dark:border-purple-700/50"
+            >
+              {/* Category badge */}
+              <motion.span
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-600 to-purple-800 text-white rounded-full text-sm font-semibold mb-6 shadow-lg"
+              >
+                <div className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></div>
                 {featuredArticles[currentFeature].category}
-              </span>
-              <div className="overflow-hidden">
+              </motion.span>
+
+              {/* Title */}
+              <div className="overflow-hidden mb-6">
                 <motion.h3
                   key={featuredArticles[currentFeature].title}
-                  initial={{ opacity: 0, y: 40 }}
+                  initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -40 }}
-                  transition={{ duration: 0.7 }}
-                  className="text-4xl font-bold mb-6 text-black dark:text-white"
+                  exit={{ opacity: 0, y: -50 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white leading-tight"
                 >
                   {featuredArticles[currentFeature].title}
                 </motion.h3>
               </div>
-              <div className="overflow-hidden">
+
+              {/* Excerpt */}
+              <div className="overflow-hidden mb-8">
                 <motion.p
                   key={featuredArticles[currentFeature].excerpt}
-                  initial={{ opacity: 0, y: 40 }}
+                  initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -40 }}
-                  transition={{ duration: 0.7, delay: 0.15 }}
-                  className="text-xl mb-8 text-gray-700 dark:text-gray-200"
+                  exit={{ opacity: 0, y: -50 }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                  className="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed"
                 >
                   {featuredArticles[currentFeature].excerpt}
                 </motion.p>
               </div>
-              <div className="flex items-center text-gray-600 dark:text-gray-300">
-                <span>{featuredArticles[currentFeature].author}</span>
-                <span className="mx-3">•</span>
+
+              {/* Author info */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="flex items-center text-gray-500 dark:text-gray-400 mb-8 space-x-4"
+              >
+                <div className="flex items-center">
+                  <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-purple-700 rounded-full flex items-center justify-center mr-3">
+                    <span className="text-white text-sm font-bold">
+                      {featuredArticles[currentFeature].author.split(' ').map(n => n[0]).join('')}
+                    </span>
+                  </div>
+                  <span className="font-medium">{featuredArticles[currentFeature].author}</span>
+                </div>
+                <span>•</span>
                 <span>{featuredArticles[currentFeature].date}</span>
-                <span className="mx-3">•</span>
-                <span>{featuredArticles[currentFeature].readTime}</span>
-              </div>
-              <button
-                className="mt-8 mb-5 px-8 py-3 bg-purple-700 dark:bg-purple-400 text-white font-semibold rounded-lg hover:bg-purple-800 dark:hover:bg-purple-500 transition-colors"
+                <span>•</span>
+                <span className="bg-purple-100 dark:bg-purple-900 px-2 py-1 rounded-full text-xs">
+                  {featuredArticles[currentFeature].readTime}
+                </span>
+              </motion.div>
+
+              {/* Read button */}
+              <motion.button
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.7 }}
+                whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(139, 69, 193, 0.3)" }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-800 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center group"
                 onClick={() => {
                   if (currentFeature === 0) window.location.href = "/blog1";
                   else if (currentFeature === 1) window.location.href = "/blog2";
@@ -283,81 +349,203 @@ function Blog() {
                 }}
               >
                 {t.readArticle}
-              </button>
-            </div>
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-3 z-20">
+                <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </motion.button>
+            </motion.div>
+
+            {/* Navigation dots */}
+            <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 flex space-x-3 z-20">
               {[0, 1, 2].map((index) => (
-                <button
+                <motion.button
                   key={index}
                   onClick={() => setCurrentFeature(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentFeature ? 'bg-purple-700 dark:bg-purple-400' : 'bg-gray-300 dark:bg-gray-700'}`}
-                ></button>
+                  whileHover={{ scale: 1.2 }}
+                  className={`w-4 h-4 rounded-full transition-all duration-300 ${
+                    index === currentFeature 
+                      ? 'bg-purple-600 dark:bg-purple-400 scale-125' 
+                      : 'bg-gray-300 dark:bg-gray-600 hover:bg-purple-300 dark:hover:bg-purple-500'
+                  }`}
+                ></motion.button>
               ))}
             </div>
           </div>
         </div>
       </section>
+
       {/* AI Concepts Section */}
-      <section className="py-5 px-4 bg-white dark:bg-black">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-4 text-black dark:text-white">{t.conceptTitle}</h2>
-          <p className="text-xl text-center text-gray-700 dark:text-gray-300 mb-12 max-w-3xl mx-auto">
+      <section className="py-16 px-4 bg-gradient-to-br from-white to-purple-50 dark:from-black dark:to-gray-900">
+        <div className="max-w-7xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold text-center mb-6 text-gray-900 dark:text-white"
+          >
+            {t.conceptTitle}
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-xl text-center text-gray-600 dark:text-gray-300 mb-16 max-w-3xl mx-auto"
+          >
             {t.conceptDesc}
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          </motion.p>
+
+          {/* Concept selection cards */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
             {concepts.map((concept, index) => (
-              <button
+              <motion.button
                 key={index}
                 onClick={() => setActiveConcept(index)}
-                className={`p-4 rounded-xl text-center transition-all duration-300 ${activeConcept === index
-                  ? "bg-purple-100 dark:bg-purple-900 border-2 border-purple-300 dark:border-purple-700 shadow-md"
-                  : "bg-white dark:bg-gray-900 hover:bg-purple-50 dark:hover:bg-purple-800"
-                  }`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05, y: -5 }}
+                whileTap={{ scale: 0.95 }}
+                className={`p-6 rounded-2xl text-center transition-all duration-300 relative overflow-hidden ${
+                  activeConcept === index
+                    ? "bg-gradient-to-br from-purple-500 to-purple-700 text-white shadow-2xl transform scale-105"
+                    : "bg-white dark:bg-gray-800 hover:bg-purple-50 dark:hover:bg-purple-900 shadow-lg hover:shadow-xl text-gray-800 dark:text-white"
+                }`}
               >
-                <div className="text-3xl mb-2 text-purple-600 dark:text-purple-300">{concept.icon}</div>
-                <h3 className="font-medium text-black dark:text-white">{concept.term}</h3>
-              </button>
+                {/* Animated background */}
+                {activeConcept === index && (
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-purple-600 opacity-20 animate-pulse"></div>
+                )}
+                
+                <div className={`text-4xl mb-3 transition-transform duration-300 ${activeConcept === index ? 'scale-110' : ''}`}>
+                  <img src={concept.icon} alt={concept.term} className="w-12 h-12 mx-auto object-contain" />
+                </div>
+                <h3 className={`font-semibold text-sm md:text-base ${activeConcept === index ? 'text-white' : ''}`}>
+                  {concept.term}
+                </h3>
+                
+                {/* Active indicator */}
+                {activeConcept === index && (
+                  <div className="absolute top-2 right-2 w-3 h-3 bg-white rounded-full animate-pulse"></div>
+                )}
+              </motion.button>
             ))}
           </div>
-          <div className="bg-white dark:bg-gray-900 rounded-2xl p-8 border border-purple-200 dark:border-purple-700">
-            <div className="flex items-start mb-6">
-              <div className="text-5xl mr-6 text-purple-600 dark:text-purple-300">{concepts[activeConcept].icon}</div>
+
+          {/* Concept details card */}
+          <motion.div
+            key={activeConcept}
+            initial={{ opacity: 0, y: 40, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="bg-white dark:bg-gray-800 rounded-3xl p-8 md:p-12 shadow-2xl border border-purple-100 dark:border-purple-800 relative overflow-hidden"
+          >
+            {/* Background decoration */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-purple-100 to-transparent dark:from-purple-900 opacity-30 rounded-full transform translate-x-32 -translate-y-32"></div>
+            
+            {/* Header */}
+            <div className="flex items-start mb-8 relative z-10">
+              <motion.div
+                initial={{ scale: 0, rotate: -180 }}
+                animate={{ scale: 1, rotate: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-6xl md:text-7xl mr-6 flex-shrink-0"
+              >
+                <img src={concepts[activeConcept].icon} alt={concepts[activeConcept].term} className="w-16 h-16 object-contain" />
+              </motion.div>
               <div>
-                <h3 className="text-3xl font-bold text-black dark:text-white mb-2">{concepts[activeConcept].term}</h3>
-                <span className="inline-block px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 rounded-full text-sm">
+                <motion.h3
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3"
+                >
+                  {concepts[activeConcept].term}
+                </motion.h3>
+                <motion.span
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-500 to-purple-700 text-white rounded-full text-sm font-semibold"
+                >
+                  <div className="w-2 h-2 bg-white rounded-full mr-2"></div>
                   {concepts[activeConcept].complexity} Level
-                </span>
+                </motion.span>
               </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h4 className="text-xl font-bold mb-4 text-purple-700 dark:text-purple-300">{t.definition}</h4>
-                <p className="text-black dark:text-white mb-6">{concepts[activeConcept].definition}</p>
-                <h4 className="text-xl font-bold mb-4 text-purple-700 dark:text-purple-300">{t.analogy}</h4>
-                <div className="bg-purple-50 dark:bg-purple-900 p-4 rounded-lg border border-purple-100 dark:border-purple-700">
-                  <p className="text-black dark:text-white">{concepts[activeConcept].analogy}</p>
+
+            {/* Content grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+              >
+                <h4 className="text-xl md:text-2xl font-bold mb-4 text-purple-700 dark:text-purple-300 flex items-center">
+                  <div className="w-3 h-3 bg-purple-600 rounded-full mr-3"></div>
+                  {t.definition}
+                </h4>
+                <p className="text-gray-700 dark:text-gray-300 mb-8 leading-relaxed text-lg">
+                  {concepts[activeConcept].definition}
+                </p>
+                
+                <h4 className="text-xl md:text-2xl font-bold mb-4 text-purple-700 dark:text-purple-300 flex items-center">
+                  <div className="w-3 h-3 bg-purple-600 rounded-full mr-3"></div>
+                  {t.analogy}
+                </h4>
+                <div className="bg-gradient-to-r from-purple-50 to-purple-100 dark:from-purple-900 dark:to-purple-800 p-6 rounded-2xl border-l-4 border-purple-500">
+                  <p className="text-gray-800 dark:text-gray-200 leading-relaxed italic text-lg">
+                    {concepts[activeConcept].analogy}
+                  </p>
                 </div>
-              </div>
-              <div>
-                <h4 className="text-xl font-bold mb-4 text-purple-700 dark:text-purple-300">{t.applications}</h4>
-                <p className="text-black dark:text-white mb-6">{concepts[activeConcept].applications}</p>
-                <h4 className="text-xl font-bold mb-4 text-purple-700 dark:text-purple-300">{t.related}</h4>
-                <ul className="space-y-2">
-                  <li className="text-black dark:text-white">
-                    <span className="font-semibold">{t.didYouKnow.split(":")[0]}</span> {t.didYouKnow.split(":")[1] || t.didYouKnow}
-                  </li>
-                  <li className="text-black dark:text-white">
-                    <span className="font-semibold">{t.tip.split(":")[0]}</span> {t.tip.split(":")[1] || t.tip}
-                  </li>
-                  <li className="text-black dark:text-white">
-                    <span className="font-semibold">{t.fact.split(":")[0]}</span> {t.fact.split(":")[1] || t.fact}
-                  </li>
-                </ul>
-              </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                <h4 className="text-xl md:text-2xl font-bold mb-4 text-purple-700 dark:text-purple-300 flex items-center">
+                  <div className="w-3 h-3 bg-purple-600 rounded-full mr-3"></div>
+                  {t.applications}
+                </h4>
+                <p className="text-gray-700 dark:text-gray-300 mb-8 leading-relaxed text-lg">
+                  {concepts[activeConcept].applications}
+                </p>
+                
+                <h4 className="text-xl md:text-2xl font-bold mb-4 text-purple-700 dark:text-purple-300 flex items-center">
+                  <div className="w-3 h-3 bg-purple-600 rounded-full mr-3"></div>
+                  {t.related}
+                </h4>
+                <div className="space-y-4">
+                  {[t.didYouKnow, t.tip, t.fact].map((item, idx) => (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.7 + idx * 0.1 }}
+                      className="flex items-start p-4 bg-white dark:bg-gray-700 rounded-xl shadow-md border border-purple-100 dark:border-purple-700"
+                    >
+                      <div className="w-2 h-2 bg-purple-500 rounded-full mt-3 mr-3 flex-shrink-0"></div>
+                      <div>
+                        <span className="font-semibold text-purple-700 dark:text-purple-300">
+                          {item.split(":")[0]}:
+                        </span>
+                        <span className="text-gray-700 dark:text-gray-300 ml-1">
+                          {item.split(":")[1] || item}
+                        </span>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
+
       {/* AI Innovation Spotlight Section */}
       <section className="py-16 px-4 bg-gradient-to-br from-white to-purple-50 dark:bg-black">
         <div className="max-w-6xl mx-auto">

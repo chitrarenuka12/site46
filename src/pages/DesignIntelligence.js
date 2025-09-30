@@ -3,7 +3,16 @@ import { motion } from "framer-motion";
 import heroVideo from "../images/ai-demo.mp4";
 import { useNavigate } from "react-router-dom";
 import DesignIntel from "../images/designsolutions.jpg";
-
+import assistant from "../images/assistant.png";
+import thunder from "../images/thunder.png";
+import robot from "../images/robot.png";
+import screw from "../images/screw.png";
+import picture from "../images/picture.png";
+import triangle from "../images/triangle.png";
+import video from "../images/video-camera.png";
+import building from "../images/office-building.png";
+import partners from "../images/partners.png";
+import notes from "../images/notes.png";
 // Translations object for all UI text and arrays
 const translations = {
   en: {
@@ -27,10 +36,10 @@ const translations = {
     ],
     howWorksTitle: "How It Works",
     howWorksSteps: [
-      { icon: "🎨", title: "Input Your Idea", desc: "Describe your vision or upload a reference." },
-      { icon: "⚡", title: "AI Generates Designs", desc: "Get multiple creative options instantly." },
-      { icon: "🔧", title: "Customize & Refine", desc: "Edit, tweak, and optimize with smart tools." },
-      { icon: "🚀", title: "Export & Share", desc: "Download or share your final design." }
+      { icon: assistant, title: "Input Your Idea", desc: "Describe your vision or upload a reference." },
+      { icon: thunder, title: "AI Generates Designs", desc: "Get multiple creative options instantly." },
+      { icon: screw, title: "Customize & Refine", desc: "Edit, tweak, and optimize with smart tools." },
+      { icon: robot, title: "Export & Share", desc: "Download or share your final design." }
     ],
     overviewTitle: "What Makes Our Design Intelligence Unique?",
     overviewDesc: "Our AI design tools combine generative creativity, layout optimization, and brand intelligence to deliver stunning, effective designs for any project.",
@@ -43,12 +52,12 @@ const translations = {
     overviewBtn: "Learn More",
     useCasesTitle: "AI Design Intelligence Use Cases",
     useCases: [
-      { icon: "🖼️", title: "Graphic Design", desc: "Generate logos, banners, and social media assets." },
-      { icon: "📐", title: "UI/UX Prototyping", desc: "Create wireframes and interactive prototypes." },
-      { icon: "🎬", title: "Video & Animation", desc: "Automate video editing and motion graphics." },
-      { icon: "📝", title: "Content Layouts", desc: "Design blog posts, newsletters, and presentations." },
-      { icon: "🏢", title: "Branding", desc: "Maintain style across all marketing materials." },
-      { icon: "🤝", title: "Collaboration", desc: "Share designs and get feedback instantly." }
+      { icon: picture, title: "Graphic Design", desc: "Generate logos, banners, and social media assets." },
+      { icon: triangle, title: "UI/UX Prototyping", desc: "Create wireframes and interactive prototypes." },
+      { icon: video, title: "Video & Animation", desc: "Automate video editing and motion graphics." },
+      { icon: notes, title: "Content Layouts", desc: "Design blog posts, newsletters, and presentations." },
+      { icon: building, title: "Branding", desc: "Maintain style across all marketing materials." },
+      { icon: partners, title: "Collaboration", desc: "Share designs and get feedback instantly." }
     ],
     highlightsTitle: "Design Intelligence Highlights",
     highlightsDesc: "Our AI design solutions are packed with features to help you create, collaborate, and innovate faster than ever before.",
@@ -83,10 +92,10 @@ const translations = {
     ],
     howWorksTitle: "كيف يعمل",
     howWorksSteps: [
-      { icon: "🎨", title: "أدخل فكرتك", desc: "صف رؤيتك أو حمّل مرجعاً." },
-      { icon: "⚡", title: "الذكاء الاصطناعي ينشئ التصاميم", desc: "احصل على خيارات إبداعية متعددة فوراً." },
-      { icon: "🔧", title: "خصص وحسّن", desc: "عدل وطور باستخدام أدوات ذكية." },
-      { icon: "🚀", title: "صدّر وشارك", desc: "حمّل أو شارك التصميم النهائي." }
+      { icon: assistant, title: "أدخل فكرتك", desc: "صف رؤيتك أو حمّل مرجعاً." },
+      { icon: thunder, title: "الذكاء الاصطناعي ينشئ التصاميم", desc: "احصل على خيارات إبداعية متعددة فوراً." },
+      { icon: screw, title: "خصص وحسّن", desc: "عدل وطور باستخدام أدوات ذكية." },
+      { icon: robot, title: "صدّر وشارك", desc: "حمّل أو شارك التصميم النهائي." }
     ],
     overviewTitle: "ما الذي يجعل ذكاء التصميم لدينا فريداً؟",
     overviewDesc: "تجمع أدواتنا بين الإبداع التوليدي، وتحسين التخطيط، وذكاء العلامة التجارية للحصول على تصاميم مذهلة وفعالة لأي مشروع.",
@@ -99,12 +108,12 @@ const translations = {
     overviewBtn: "اعرف المزيد",
     useCasesTitle: "حالات استخدام ذكاء التصميم",
     useCases: [
-      { icon: "🖼️", title: "تصميم جرافيكي", desc: "إنشاء شعارات، لافتات، ووسائط اجتماعية." },
-      { icon: "📐", title: "نمذجة واجهات المستخدم", desc: "إنشاء نماذج أولية وتفاعلية." },
-      { icon: "🎬", title: "فيديو ورسوم متحركة", desc: "أتمتة تحرير الفيديو والرسوم المتحركة." },
-      { icon: "📝", title: "تخطيطات المحتوى", desc: "تصميم منشورات المدونة والنشرات والعروض." },
-      { icon: "🏢", title: "العلامة التجارية", desc: "الحفاظ على الأسلوب في جميع المواد التسويقية." },
-      { icon: "🤝", title: "التعاون", desc: "شارك التصاميم واحصل على الملاحظات فوراً." }
+      { icon: picture, title: "تصميم جرافيكي", desc: "إنشاء شعارات، لافتات، ووسائط اجتماعية." },
+      { icon: triangle, title: "نمذجة واجهات المستخدم", desc: "إنشاء نماذج أولية وتفاعلية." },
+      { icon: video, title: "فيديو ورسوم متحركة", desc: "أتمتة تحرير الفيديو والرسوم المتحركة." },
+      { icon: notes, title: "تخطيطات المحتوى", desc: "تصميم منشورات المدونة والنشرات والعروض." },
+      { icon: building, title: "العلامة التجارية", desc: "الحفاظ على الأسلوب في جميع المواد التسويقية." },
+      { icon: partners, title: "التعاون", desc: "شارك التصاميم واحصل على الملاحظات فوراً." }
     ],
     highlightsTitle: "أبرز ميزات ذكاء التصميم",
     highlightsDesc: "حلولنا مليئة بالميزات لمساعدتك على الإنشاء والتعاون والابتكار بسرعة غير مسبوقة.",
@@ -139,10 +148,10 @@ const translations = {
     ],
     howWorksTitle: "איך זה עובד",
     howWorksSteps: [
-      { icon: "🎨", title: "הזן רעיון", desc: "תאר את החזון שלך או העלה דוגמה." },
-      { icon: "⚡", title: "ה-AI יוצר עיצובים", desc: "קבל אפשרויות יצירתיות רבות מיד." },
-      { icon: "🔧", title: "התאם ושפר", desc: "ערוך, שפר ואופטימיזציה עם כלים חכמים." },
-      { icon: "🚀", title: "ייצא ושתף", desc: "הורד או שתף את העיצוב הסופי." }
+      { icon: assistant, title: "הזן רעיון", desc: "תאר את החזון שלך או העלה דוגמה." },
+      { icon: thunder, title: "ה-AI יוצר עיצובים", desc: "קבל אפשרויות יצירתיות רבות מיד." },
+      { icon: screw, title: "התאם ושפר", desc: "ערוך, שפר ואופטימיזציה עם כלים חכמים." },
+      { icon: robot, title: "ייצא ושתף", desc: "הורד או שתף את העיצוב הסופי." }
     ],
     overviewTitle: "מה מייחד את האינטליגנציה העיצובית שלנו?",
     overviewDesc: "הכלים שלנו משלבים יצירתיות גנרטיבית, אופטימיזציית פריסה ואינטליגנציה מותגית לעיצובים מרהיבים ויעילים לכל פרויקט.",
@@ -155,12 +164,12 @@ const translations = {
     overviewBtn: "למידע נוסף",
     useCasesTitle: "שימושים באינטליגנציה עיצובית",
     useCases: [
-      { icon: "🖼️", title: "עיצוב גרפי", desc: "יצירת לוגואים, באנרים ונכסים לרשתות חברתיות." },
-      { icon: "📐", title: "אב-טיפוס UI/UX", desc: "יצירת wireframes ואבות-טיפוס אינטראקטיביים." },
-      { icon: "🎬", title: "וידאו ואנימציה", desc: "אוטומציה של עריכת וידאו וגרפיקה בתנועה." },
-      { icon: "📝", title: "פריסות תוכן", desc: "עיצוב פוסטים, ניוזלטרים ומצגות." },
-      { icon: "🏢", title: "מיתוג", desc: "שמירה על סגנון בכל חומר שיווקי." },
-      { icon: "🤝", title: "שיתוף פעולה", desc: "שיתוף עיצובים ומשוב מידי." }
+      { icon: picture, title: "עיצוב גרפי", desc: "יצירת לוגואים, באנרים ונכסים לרשתות חברתיות." },
+      { icon: triangle, title: "אב-טיפוס UI/UX", desc: "יצירת wireframes ואבות-טיפוס אינטראקטיביים." },
+      { icon: video, title: "וידאו ואנימציה", desc: "אוטומציה של עריכת וידאו וגרפיקה בתנועה." },
+      { icon: notes, title: "פריסות תוכן", desc: "עיצוב פוסטים, ניוזלטרים ומצגות." },
+      { icon: building, title: "מיתוג", desc: "שמירה על סגנון בכל חומר שיווקי." },
+      { icon: partners, title: "שיתוף פעולה", desc: "שיתוף עיצובים ומשוב מידי." }
     ],
     highlightsTitle: "הדגשים באינטליגנציה עיצובית",
     highlightsDesc: "הפתרונות שלנו מלאים בתכונות שיעזרו לך ליצור, לשתף פעולה ולחדש מהר מתמיד.",
@@ -290,7 +299,7 @@ function DesignIntelligence() {
         </motion.div>
       </section>
       {/* How It Works */}
-      <section className="py-8 px-4 bg-white dark:bg-black">
+      <section className="py-8 px-4 bg-purple-50 dark:bg-black">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-black dark:text-white">{t.howWorksTitle}</h2>
           <div className="flex flex-col md:flex-row items-center justify-center gap-8">
@@ -298,7 +307,7 @@ function DesignIntelligence() {
               <div key={idx} className="flip-card w-64 h-64">
                 <div className="flip-card-inner group relative w-full h-full">
                   <div className="flip-card-front absolute w-full h-full bg-white dark:bg-gray-900 rounded-2xl shadow-lg border border-purple-100 dark:border-purple-700 flex flex-col items-center justify-center text-center transition-transform duration-500 group-hover:rotate-y-180">
-                    <div className="w-16 h-16 flex items-center justify-center rounded-full bg-purple-700 dark:bg-purple-400 text-white text-3xl font-bold mb-4">{step.icon}</div>
+                    <div className="w-16 h-16 flex items-center justify-center rounded-full bg-purple-700 dark:bg-purple-400 text-white text-3xl font-bold mb-4"> <img src={step.icon} alt={step.title} className="w-8 h-8 object-contain" /></div>
                     <h3 className="text-xl font-bold text-purple-700 dark:text-purple-300 mb-2">{step.title}</h3>
                     <p className="text-gray-700 dark:text-gray-300">Step {idx + 1}</p>
                   </div>
@@ -365,7 +374,7 @@ function DesignIntelligence() {
                 transition={{ duration: 0.6, delay: idx * 0.12 }}
                 viewport={{ once: true }}
               >
-                <div className="w-14 h-14 flex items-center justify-center rounded-full bg-purple-700 dark:bg-purple-400 text-white dark:text-black text-3xl font-bold mb-4">{use.icon}</div>
+                <div className="w-14 h-14 flex items-center justify-center rounded-full bg-purple-700 dark:bg-purple-400 text-white dark:text-black text-3xl font-bold mb-4"><img src={use.icon} alt={use.title} className="w-8 h-8 object-contain" /></div>
                 <h3 className="text-xl font-bold text-purple-700 dark:text-purple-300 mb-2 text-center">{use.title}</h3>
                 <p className="text-black dark:text-white text-sm text-center">{use.desc}</p>
               </motion.div>

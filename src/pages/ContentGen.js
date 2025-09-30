@@ -3,7 +3,17 @@ import { motion } from "framer-motion";
 import heroVideo from "../images/ai-demo.mp4";
 import { useNavigate } from "react-router-dom";
 import Contentgen from "../images/contentgen.jpg";
-
+import notes from "../images/notes.png";
+import search from "../images/search.png";
+import thunder from "../images/thunder.png";
+import robot from "../images/robot.png";  
+import advertising from "../images/advertising.png";
+import ecommerce from "../images/ecommerce.png";
+import education from "../images/university.png";
+import assistant from "../images/assistant.png";
+import organization from "../images/organization.png";
+import partners from "../images/partners.png";
+import lock from "../images/padlock.png";
 // Translations object for all UI text and arrays
 const translations = {
   en: {
@@ -28,10 +38,10 @@ const translations = {
     ],
     howWorksTitle: "How It Works",
     howWorksSteps: [
-      { icon: "📝", title: "Choose Content Type", desc: "Select text, code, image, or video." },
-      { icon: "🔍", title: "Input Requirements", desc: "Add prompts, keywords, or style guides." },
-      { icon: "⚡", title: "Generate & Edit", desc: "Instantly create and refine your content." },
-      { icon: "🚀", title: "Publish & Analyze", desc: "Deploy content and track results." }
+      { icon: notes, title: "Choose Content Type", desc: "Select text, code, image, or video." },
+      { icon: search, title: "Input Requirements", desc: "Add prompts, keywords, or style guides." },
+      { icon: thunder, title: "Generate & Edit", desc: "Instantly create and refine your content." },
+      { icon: robot, title: "Publish & Analyze", desc: "Deploy content and track results." }
     ],
     overviewTitle: "Why Use AI for Content Generation?",
     overviewDesc: "AI tools streamline your workflow, boost creativity, and ensure quality—saving time and resources.",
@@ -44,20 +54,20 @@ const translations = {
     overviewBtn: "Learn More",
     useCasesTitle: "AI Content Generation Use Cases",
     useCases: [
-      { icon: "📝", title: "Blogging", desc: "Write SEO-friendly posts in minutes." },
-      { icon: "📢", title: "Marketing", desc: "Create ad copy and social media content." },
-      { icon: "🛒", title: "E-Commerce", desc: "Generate product descriptions and reviews." },
-      { icon: "🎓", title: "Education", desc: "Produce learning materials and quizzes." },
-      { icon: "💻", title: "Development", desc: "Generate code and documentation." },
-      { icon: "🎨", title: "Design", desc: "Create images, banners, and videos." }
+      { icon: notes, title: "Blogging", desc: "Write SEO-friendly posts in minutes." },
+      { icon: advertising, title: "Marketing", desc: "Create ad copy and social media content." },
+      { icon: ecommerce, title: "E-Commerce", desc: "Generate product descriptions and reviews." },
+      { icon: education, title: "Education", desc: "Produce learning materials and quizzes." },
+      { icon: assistant, title: "Development", desc: "Generate code and documentation." },
+      { icon: organization, title: "Design", desc: "Create images, banners, and videos." }
     ],
     highlightsTitle: "Content Generation Highlights",
     highlightsDesc: "Discover the unique features that make AI content generation fast, creative, and reliable for your business.",
     highlights: [
-      { icon: "📄", title: "Creative Templates", desc: "Start with proven formats for any content type." },
-      { icon: "⚡", title: "Real-Time Editing", desc: "Refine and improve content instantly." },
-      { icon: "🤝", title: "Collaboration", desc: "Work with teams and share drafts easily." },
-      { icon: "🔒", title: "Secure Storage", desc: "Keep your content safe and organized." }
+      { icon: notes, title: "Creative Templates", desc: "Start with proven formats for any content type." },
+      { icon: thunder, title: "Real-Time Editing", desc: "Refine and improve content instantly." },
+      { icon: partners, title: "Collaboration", desc: "Work with teams and share drafts easily." },
+      { icon: lock, title: "Secure Storage", desc: "Keep your content safe and organized." }
     ],
     ctaTitle: "Ready to Create with AI?",
     ctaDesc: "Start generating high-quality content and unlock new possibilities for your business.",
@@ -85,10 +95,10 @@ const translations = {
     ],
     howWorksTitle: "كيف يعمل",
     howWorksSteps: [
-      { icon: "📝", title: "اختر نوع المحتوى", desc: "حدد نص، كود، صورة أو فيديو." },
-      { icon: "🔍", title: "أدخل المتطلبات", desc: "أضف التعليمات أو الكلمات المفتاحية أو دليل الأسلوب." },
-      { icon: "⚡", title: "أنشئ وعدل", desc: "أنشئ وعدل المحتوى فوراً." },
-      { icon: "🚀", title: "انشر وحلل", desc: "انشر المحتوى وتتبع النتائج." }
+      { icon: notes, title: "اختر نوع المحتوى", desc: "حدد نص، كود، صورة أو فيديو." },
+      { icon: search, title: "أدخل المتطلبات", desc: "أضف التعليمات أو الكلمات المفتاحية أو دليل الأسلوب." },
+      { icon: thunder, title: "أنشئ وعدل", desc: "أنشئ وعدل المحتوى فوراً." },
+      { icon: robot, title: "انشر وحلل", desc: "انشر المحتوى وتتبع النتائج." }
     ],
     overviewTitle: "لماذا تستخدم الذكاء الاصطناعي لإنشاء المحتوى؟",
     overviewDesc: "تعمل أدوات الذكاء الاصطناعي على تبسيط سير العمل، وتعزيز الإبداع، وضمان الجودة—وتوفير الوقت والموارد.",
@@ -101,20 +111,20 @@ const translations = {
     overviewBtn: "اعرف المزيد",
     useCasesTitle: "حالات استخدام إنشاء المحتوى بالذكاء الاصطناعي",
     useCases: [
-      { icon: "📝", title: "التدوين", desc: "اكتب مقالات متوافقة مع SEO في دقائق." },
-      { icon: "📢", title: "التسويق", desc: "أنشئ نصوص إعلانات ومحتوى اجتماعي." },
-      { icon: "🛒", title: "التجارة الإلكترونية", desc: "أنشئ أوصاف المنتجات والمراجعات." },
-      { icon: "🎓", title: "التعليم", desc: "إنتاج مواد تعليمية واختبارات." },
-      { icon: "💻", title: "البرمجة", desc: "توليد الكود والتوثيق." },
-      { icon: "🎨", title: "التصميم", desc: "إنشاء صور، لافتات وفيديوهات." }
+      { icon: notes, title: "التدوين", desc: "اكتب مقالات متوافقة مع SEO في دقائق." },
+      { icon: advertising, title: "التسويق", desc: "أنشئ نصوص إعلانات ومحتوى اجتماعي." },
+      { icon: ecommerce, title: "التجارة الإلكترونية", desc: "أنشئ أوصاف المنتجات والمراجعات." },
+      { icon: education, title: "التعليم", desc: "إنتاج مواد تعليمية واختبارات." },
+      { icon: assistant, title: "البرمجة", desc: "توليد الكود والتوثيق." },
+      { icon: organization, title: "التصميم", desc: "إنشاء صور، لافتات وفيديوهات." }
     ],
     highlightsTitle: "أبرز ميزات إنشاء المحتوى",
     highlightsDesc: "اكتشف الميزات الفريدة التي تجعل إنشاء المحتوى بالذكاء الاصطناعي سريعاً ومبدعاً وموثوقاً لأعمالك.",
     highlights: [
-      { icon: "📄", title: "قوالب إبداعية", desc: "ابدأ بصيغ مجربة لأي نوع محتوى." },
-      { icon: "⚡", title: "تحرير فوري", desc: "حسّن وعدل المحتوى فوراً." },
-      { icon: "🤝", title: "تعاون", desc: "اعمل مع الفرق وشارك المسودات بسهولة." },
-      { icon: "🔒", title: "تخزين آمن", desc: "احفظ محتواك بأمان وتنظيم." }
+      { icon: notes, title: "قوالب إبداعية", desc: "ابدأ بصيغ مجربة لأي نوع محتوى." },
+      { icon: thunder, title: "تحرير فوري", desc: "حسّن وعدل المحتوى فوراً." },
+      { icon: partners, title: "تعاون", desc: "اعمل مع الفرق وشارك المسودات بسهولة." },
+      { icon: lock, title: "تخزين آمن", desc: "احفظ محتواك بأمان وتنظيم." }
     ],
     ctaTitle: "جاهز للإنشاء بالذكاء الاصطناعي؟",
     ctaDesc: "ابدأ في إنشاء محتوى عالي الجودة وافتح إمكانيات جديدة لأعمالك.",
@@ -142,10 +152,10 @@ const translations = {
     ],
     howWorksTitle: "איך זה עובד",
     howWorksSteps: [
-      { icon: "📝", title: "בחר סוג תוכן", desc: "בחר טקסט, קוד, תמונה או וידאו." },
-      { icon: "🔍", title: "הזן דרישות", desc: "הוסף הנחיות, מילות מפתח או מדריך סגנון." },
-      { icon: "⚡", title: "צור וערוך", desc: "צור וערוך תוכן מיד." },
-      { icon: "🚀", title: "פרסם ונתח", desc: "פרסם תוכן ומדוד תוצאות." }
+      { icon: notes, title: "בחר סוג תוכן", desc: "בחר טקסט, קוד, תמונה או וידאו." },
+      { icon: search, title: "הזן דרישות", desc: "הוסף הנחיות, מילות מפתח או מדריך סגנון." },
+      { icon: thunder, title: "צור וערוך", desc: "צור וערוך תוכן מיד." },
+      { icon: robot, title: "פרסם ונתח", desc: "פרסם תוכן ומדוד תוצאות." }
     ],
     overviewTitle: "למה להשתמש ב-AI ליצירת תוכן?",
     overviewDesc: "כלי AI מייעלים את העבודה, מגבירים יצירתיות ומבטיחים איכות—חוסכים זמן ומשאבים.",
@@ -158,20 +168,20 @@ const translations = {
     overviewBtn: "למידע נוסף",
     useCasesTitle: "שימושים ביצירת תוכן ב-AI",
     useCases: [
-      { icon: "📝", title: "בלוגים", desc: "כתיבת פוסטים מותאמי SEO בדקות." },
-      { icon: "📢", title: "שיווק", desc: "יצירת טקסטים למודעות ותוכן לרשתות." },
-      { icon: "🛒", title: "מסחר אלקטרוני", desc: "יצירת תיאורי מוצרים וביקורות." },
-      { icon: "🎓", title: "חינוך", desc: "הפקת חומרי לימוד ומבחנים." },
-      { icon: "💻", title: "פיתוח", desc: "יצירת קוד ותיעוד." },
-      { icon: "🎨", title: "עיצוב", desc: "יצירת תמונות, באנרים וסרטונים." }
+      { icon: notes, title: "בלוגים", desc: "כתיבת פוסטים מותאמי SEO בדקות." },
+      { icon: advertising, title: "שיווק", desc: "יצירת טקסטים למודעות ותוכן לרשתות." },
+      { icon: ecommerce, title: "מסחר אלקטרוני", desc: "יצירת תיאורי מוצרים וביקורות." },
+      { icon: education, title: "חינוך", desc: "הפקת חומרי לימוד ומבחנים." },
+      { icon: assistant, title: "פיתוח", desc: "יצירת קוד ותיעוד." },
+      { icon: organization, title: "עיצוב", desc: "יצירת תמונות, באנרים וסרטונים." }
     ],
     highlightsTitle: "הדגשים ביצירת תוכן",
     highlightsDesc: "גלה את התכונות הייחודיות שהופכות את יצירת התוכן ב-AI למהירה, יצירתית ואמינה לעסק שלך.",
     highlights: [
-      { icon: "📄", title: "תבניות יצירתיות", desc: "התחל עם פורמטים מוכחים לכל סוג תוכן." },
-      { icon: "⚡", title: "עריכה בזמן אמת", desc: "שפר וערוך תוכן מיד." },
-      { icon: "🤝", title: "שיתוף פעולה", desc: "עבוד עם צוותים ושתף טיוטות בקלות." },
-      { icon: "🔒", title: "אחסון מאובטח", desc: "שמור את התוכן שלך מאורגן ובטוח." }
+      { icon: notes, title: "תבניות יצירתיות", desc: "התחל עם פורמטים מוכחים לכל סוג תוכן." },
+      { icon: thunder, title: "עריכה בזמן אמת", desc: "שפר וערוך תוכן מיד." },
+      { icon: partners, title: "שיתוף פעולה", desc: "עבוד עם צוותים ושתף טיוטות בקלות." },
+      { icon: lock, title: "אחסון מאובטח", desc: "שמור את התוכן שלך מאורגן ובטוח." }
     ],
     ctaTitle: "מוכן ליצור עם AI?",
     ctaDesc: "התחל ליצור תוכן איכותי ופתח אפשרויות חדשות לעסק שלך.",
@@ -295,15 +305,18 @@ function ContentGen() {
       </section>
 
       {/* How It Works */}
-      <section className="py-8 px-4 bg-white dark:bg-black">
+      <section className="py-8 px-4 bg-purple-50 dark:bg-black">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-black dark:text-white">{t.howWorksTitle}</h2>
+          {/* How It Works flip cards */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-8">
             {t.howWorksSteps.map((step, idx) => (
               <div key={idx} className="flip-card w-64 h-64">
                 <div className="flip-card-inner group relative w-full h-full">
                   <div className="flip-card-front absolute w-full h-full bg-white dark:bg-gray-900 rounded-2xl shadow-lg border border-purple-100 dark:border-purple-700 flex flex-col items-center justify-center text-center transition-transform duration-500 group-hover:rotate-y-180">
-                    <div className="w-16 h-16 flex items-center justify-center rounded-full bg-purple-700 dark:bg-purple-400 text-white text-3xl font-bold mb-4">{step.icon}</div>
+                    <div className="w-16 h-16 flex items-center justify-center rounded-full bg-purple-700 dark:bg-purple-400 text-white text-3xl font-bold mb-4">
+                      <img src={step.icon} alt={step.title} className="w-10 h-10 object-contain" />
+                    </div>
                     <h3 className="text-xl font-bold text-purple-700 dark:text-purple-300 mb-2">{step.title}</h3>
                     <p className="text-gray-700 dark:text-gray-300">Step {idx + 1}</p>
                   </div>
@@ -345,7 +358,7 @@ function ContentGen() {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-5 px-4 bg-white dark:bg-black">
+      <section className="py-5 px-4 bg-purple-50 dark:bg-black">
         <div className="max-w-7xl mx-auto">
           <motion.h2
             className="text-4xl font-bold text-center mb-10 text-black dark:text-white"
@@ -356,6 +369,7 @@ function ContentGen() {
           >
             {t.useCasesTitle}
           </motion.h2>
+          {/* Use Cases Section */}
           <motion.div
             className="flex overflow-x-auto gap-8 pb-4 hide-scrollbar"
             initial="hidden"
@@ -372,7 +386,9 @@ function ContentGen() {
                 transition={{ duration: 0.6, delay: idx * 0.12 }}
                 viewport={{ once: true }}
               >
-                <div className="w-14 h-14 flex items-center justify-center rounded-full bg-purple-700 dark:bg-purple-400 text-white dark:text-black text-3xl font-bold mb-4">{use.icon}</div>
+                <div className="w-14 h-14 flex items-center justify-center rounded-full bg-purple-700 dark:bg-purple-400 text-white dark:text-black text-3xl font-bold mb-4">
+                  <img src={use.icon} alt={use.title} className="w-8 h-8 object-contain" />
+                </div>
                 <h3 className="text-xl font-bold text-purple-700 dark:text-purple-300 mb-2 text-center">{use.title}</h3>
                 <p className="text-black dark:text-white text-sm text-center">{use.desc}</p>
               </motion.div>
@@ -400,7 +416,7 @@ function ContentGen() {
             <div className="absolute left-4 top-0 bottom-0 w-1 bg-purple-300 dark:bg-purple-700 rounded-full"></div>
             {t.highlights.map((f, i) => (
               <div key={i} className="flex items-center mb-10 last:mb-0 relative z-10">
-                <div className="w-10 h-10 flex items-center justify-center rounded-full bg-purple-700 dark:bg-purple-400 text-white text-xl font-bold mr-6 shadow-lg">{f.icon}</div>
+                <div className="w-10 h-10 flex items-center justify-center rounded-full bg-purple-700 dark:bg-purple-400 text-white text-xl font-bold mr-6 shadow-lg"> <img src={f.icon} alt={f.title} className="w-8 h-8 object-contain" /></div>
                 <div>
                   <h4 className="text-lg font-bold text-black dark:text-white mb-1">{f.title}</h4>
                   <p className="text-black dark:text-white text-sm max-w-xs">{f.desc}</p>

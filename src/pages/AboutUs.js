@@ -7,7 +7,14 @@ import { useNavigate } from "react-router-dom";
 import expert1 from "../images/expert1.jpg"; // Replace with actual image paths
 import expert2 from "../images/expert2.jpg";
 import expert3 from "../images/expert3.jpg";  
-
+import innovation from "../images/innovation.png"; // New import for innovation image
+import brain from "../images/brain.png"; // New import for brain image
+import worldwide from "../images/worldwide.png"; // New import for worldwide image
+import rocket from "../images/rocket.png"; // New import for rocket image
+import robot from "../images/robot.png"; // New import for robot image
+import scale from "../images/scale.png"; // New import for scale image
+import officebuilding from "../images/office-building.png"; // New import for office building image  
+import pioneer from "../images/dna.png"
 const translations = {
   en: {
     taglineTitle: "Empowering Innovation with AI",
@@ -15,21 +22,21 @@ const translations = {
     missionTitle: "Our Mission",
     missionDesc: "We strive to foster a future where AI empowers creativity, collaboration, and ethical progress. Our mission is to build tools that inspire, connect, and elevate every user’s potential.",
     missionCards: [
-      { icon: "🌐", title: "Global Collaboration", desc: "Connect teams and ideas across borders for breakthrough innovation." },
-      { icon: "🎨", title: "Creative Intelligence", desc: "Unleash new possibilities with AI-powered design and ideation." },
-      { icon: "🧠", title: "Continuous Learning", desc: "Empower users to grow and adapt with smart, evolving tools." }
+      { icon: worldwide, title: "Global Collaboration", desc: "Connect teams and ideas across borders for breakthrough innovation." },
+      { icon: innovation, title: "Creative Intelligence", desc: "Unleash new possibilities with AI-powered design and ideation." },
+      { icon: brain, title: "Continuous Learning", desc: "Empower users to grow and adapt with smart, evolving tools." }
     ],
     visionTitle: "Our Vision",
     visionDesc: "We are committed to shaping a future where AI is a creative partner, driving ethical progress and empowering every person and organization to achieve more. Our vision is to build intelligent tools that inspire innovation, foster collaboration, and unlock new possibilities for all. To revolutionize the world of content creation by harnessing the power of AI, delivering seamless and effortless solutions that empower individuals and businesses to effortlessly generate, enhance, and transform their content.",
     storyTitle: "Our Story",
     storyDesc: "From a small team of dreamers to a global leader in AI tools, our journey has been defined by innovation, collaboration, and a relentless pursuit of excellence. Every milestone reflects our commitment to empowering people and organizations with intelligent technology.",
     storySteps: [
-      { icon: "🚀", year: "2020", text: "Launched our first AI platform" },
-      { icon: "🤖", year: "2021", text: "Introduced smart automation tools" },
-      { icon: "🌍", year: "2022", text: "Expanded to global markets" },
-      { icon: "⚖️", year: "2023", text: "Started AI ethics initiative" },
-      { icon: "🏢", year: "2024", text: "Delivered enterprise AI solutions" },
-      { icon: "🧬", year: "2025", text: "Pioneered quantum AI" }
+      { icon: rocket, year: "2020", text: "Launched our first AI platform" },
+      { icon: robot, year: "2021", text: "Introduced smart automation tools" },
+      { icon: worldwide, year: "2022", text: "Expanded to global markets" },
+      { icon: scale, year: "2023", text: "Started AI ethics initiative" },
+      { icon: officebuilding, year: "2024", text: "Delivered enterprise AI solutions" },
+      { icon: pioneer, year: "2025", text: "Pioneered quantum AI" }
     ],
     teamTitle: "Our Expert Team",
     teamDesc: "Meet the minds driving our AI innovation. Our diverse team blends expertise in machine learning, design, engineering, and ethics to deliver world-class solutions.",
@@ -48,21 +55,21 @@ const translations = {
     missionTitle: "مهمتنا",
     missionDesc: "نسعى لتعزيز مستقبل يمكّن فيه الذكاء الاصطناعي الإبداع والتعاون والتقدم الأخلاقي. مهمتنا هي بناء أدوات تلهم وتربط وترتقي بإمكانات كل مستخدم.",
     missionCards: [
-      { icon: "🌐", title: "التعاون العالمي", desc: "ربط الفرق والأفكار عبر الحدود لتحقيق ابتكار رائد." },
-      { icon: "🎨", title: "الذكاء الإبداعي", desc: "اكتشف إمكانيات جديدة مع التصميم والأفكار المدعومة بالذكاء الاصطناعي." },
-      { icon: "🧠", title: "التعلم المستمر", desc: "مكّن المستخدمين من النمو والتكيف مع أدوات ذكية ومتطورة." }
+      { icon: worldwide, title: "التعاون العالمي", desc: "ربط الفرق والأفكار عبر الحدود لتحقيق ابتكار رائد." },
+      { icon: innovation, title: "الذكاء الإبداعي", desc: "اكتشف إمكانيات جديدة مع التصميم والأفكار المدعومة بالذكاء الاصطناعي." },
+      { icon: brain, title: "التعلم المستمر", desc: "مكّن المستخدمين من النمو والتكيف مع أدوات ذكية ومتطورة." }
     ],
     visionTitle: "رؤيتنا",
     visionDesc: "نلتزم بتشكيل مستقبل يكون فيه الذكاء الاصطناعي شريكًا إبداعيًا، يدفع التقدم الأخلاقي ويمكّن كل شخص ومنظمة لتحقيق المزيد. رؤيتنا هي بناء أدوات ذكية تلهم الابتكار وتعزز التعاون وتفتح إمكانيات جديدة للجميع. ثورة في عالم إنشاء المحتوى من خلال تسخير قوة الذكاء الاصطناعي وتقديم حلول سلسة تمكّن الأفراد والشركات من إنشاء وتحسين وتحويل المحتوى بسهولة.",
     storyTitle: "قصتنا",
     storyDesc: "من فريق صغير من الحالمين إلى قائد عالمي في أدوات الذكاء الاصطناعي، كانت رحلتنا مليئة بالابتكار والتعاون والسعي المستمر للتميز. كل إنجاز يعكس التزامنا بتمكين الناس والمنظمات بالتكنولوجيا الذكية.",
     storySteps: [
-      { icon: "🚀", year: "2020", text: "إطلاق أول منصة ذكاء اصطناعي" },
-      { icon: "🤖", year: "2021", text: "تقديم أدوات الأتمتة الذكية" },
-      { icon: "🌍", year: "2022", text: "التوسع للأسواق العالمية" },
-      { icon: "⚖️", year: "2023", text: "بدء مبادرة أخلاقيات الذكاء الاصطناعي" },
-      { icon: "🏢", year: "2024", text: "تقديم حلول ذكاء اصطناعي للمؤسسات" },
-      { icon: "🧬", year: "2025", text: "ريادة الذكاء الاصطناعي الكمومي" }
+      { icon: rocket, year: "2020", text: "إطلاق أول منصة ذكاء اصطناعي" },
+      { icon: robot, year: "2021", text: "تقديم أدوات الأتمتة الذكية" },
+      { icon: worldwide, year: "2022", text: "التوسع للأسواق العالمية" },
+      { icon: scale, year: "2023", text: "بدء مبادرة أخلاقيات الذكاء الاصطناعي" },
+      { icon: officebuilding, year: "2024", text: "تقديم حلول ذكاء اصطناعي للمؤسسات" },
+      { icon: pioneer, year: "2025", text: "ريادة الذكاء الاصطناعي الكمومي" }
     ],
     teamTitle: "فريق الخبراء لدينا",
     teamDesc: "تعرف على العقول التي تقود ابتكار الذكاء الاصطناعي لدينا. يجمع فريقنا بين الخبرة في التعلم الآلي، التصميم، الهندسة، والأخلاقيات لتقديم حلول عالمية المستوى.",
@@ -78,24 +85,24 @@ const translations = {
   he: {
     taglineTitle: "העצמת חדשנות עם AI",
     taglineDesc: "גלו את המסע שלנו, המשימה והמומחים מאחורי החזון.",
-    missionTitle: "המשימה שלנו",
-    missionDesc: "אנו שואפים לקדם עתיד שבו AI מעצים יצירתיות, שיתוף פעולה והתקדמות אתית. המשימה שלנו היא לבנות כלים שמעניקים השראה, מחברים ומעצימים את הפוטנציאל של כל משתמש.",
+    missionTitle: "המש mission שלנו",
+    missionDesc: "אנו שואפים לקדם עתיד שבו AI מעצים יצירתיות, שיתוף פעולה והתקדמות אתית. המש mission שלנו היא לבנות כלים שמעניקים השראה, מחברים ומעצימים את הפוטנציאל של כל משתמש.",
     missionCards: [
-      { icon: "🌐", title: "שיתוף פעולה גלובלי", desc: "חברו צוותים ורעיונות מעבר לגבולות לחדשנות פורצת דרך." },
-      { icon: "🎨", title: "אינטליגנציה יצירתית", desc: "פתחו אפשרויות חדשות עם עיצוב ורעיונות מבוססי AI." },
-      { icon: "🧠", title: "למידה מתמשכת", desc: "העצימו משתמשים לצמוח ולהסתגל עם כלים חכמים ומתפתחים." }
+      { icon: worldwide, title: "שיתוף פעולה גלובלי", desc: "חברו צוותים ורעיונות מעבר לגבולות לחדשנות פורצת דרך." },
+      { icon: innovation, title: "אינטליגנציה יצירתית", desc: "פתחו אפשרויות חדשות עם עיצוב ורעיונות מבוססי AI." },
+      { icon: brain, title: "למידה מתמשכת", desc: "העצימו משתמשים לצמוח ולהסתגל עם כלים חכמים ומתפתחים." }
     ],
     visionTitle: "החזון שלנו",
     visionDesc: "אנו מחויבים לעצב עתיד שבו AI הוא שותף יצירתי, מקדם התקדמות אתית ומעצים כל אדם וארגון להשיג יותר. החזון שלנו הוא לבנות כלים חכמים שמעוררים חדשנות, מעודדים שיתוף פעולה ופותחים אפשרויות חדשות לכולם. מהפכה בעולם יצירת התוכן באמצעות כוח ה-AI, פתרונות חלקים שמאפשרים לכל אחד ליצור, לשפר ולהפוך תוכן בקלות.",
     storyTitle: "הסיפור שלנו",
     storyDesc: "מצוות קטן של חולמים למוביל עולמי בכלי AI, המסע שלנו הוגדר על ידי חדשנות, שיתוף פעולה ושאיפה מתמדת למצוינות. כל אבן דרך משקפת את המחויבות שלנו להעצים אנשים וארגונים עם טכנולוגיה חכמה.",
     storySteps: [
-      { icon: "🚀", year: "2020", text: "השקנו את פלטפורמת ה-AI הראשונה שלנו" },
-      { icon: "🤖", year: "2021", text: "הצגנו כלי אוטומציה חכמים" },
-      { icon: "🌍", year: "2022", text: "התרחבות לשווקים גלובליים" },
-      { icon: "⚖️", year: "2023", text: "התחלנו יוזמת אתיקה ב-AI" },
-      { icon: "🏢", year: "2024", text: "סיפקנו פתרונות AI לארגונים" },
-      { icon: "🧬", year: "2025", text: "חלוצי AI קוונטי" }
+      { icon: rocket, year: "2020", text: "השקנו את פלטפורמת ה-AI הראשונה שלנו" },
+      { icon: robot, year: "2021", text: "הצגנו כלי אוטומציה חכמים" },
+      { icon: worldwide, year: "2022", text: "התרחבות לשווקים גלובליים" },
+      { icon: scale, year: "2023", text: "התחלנו יוזמת אתיקה ב-AI" },
+      { icon: officebuilding, year: "2024", text: "סיפקנו פתרונות AI לארגונים" },
+      { icon: pioneer, year: "2025", text: "חלוצי AI קוונטי" }
     ],
     teamTitle: "צוות המומחים שלנו",
     teamDesc: "הכירו את המוחות שמובילים את החדשנות שלנו ב-AI. הצוות המגוון שלנו משלב מומחיות בלמידת מכונה, עיצוב, הנדסה ואתיקה כדי לספק פתרונות ברמה עולמית.",
@@ -191,7 +198,7 @@ export default function AboutUs() {
                 className="rounded-2xl p-8 shadow-xl border border-purple-400 backdrop-blur-lg bg-white/60 dark:bg-black/60 flex flex-col items-center text-center hover:scale-105 transition-transform"
               >
                 <div className="w-14 h-14 rounded-full bg-purple-700 text-white flex items-center justify-center text-3xl mb-4 shadow-lg">
-                  {item.icon}
+                  <img src={item.icon} alt={item.title} className="w-8 h-8 object-contain" />
                 </div>
                 <h3 className="font-bold text-xl mb-2 text-purple-700 dark:text-purple-300">
                   {item.title}
@@ -222,7 +229,7 @@ export default function AboutUs() {
       </section>
 
       {/* Our Story Section - AI Tools, Horizontal Stepper */}
-      <section className="w-full py-10 flex flex-col items-center">
+      <section className="w-full py-10 flex flex-col items-center bg-purple-50 dark:bg-black ">
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -241,7 +248,7 @@ export default function AboutUs() {
         >
           {translations[language].storyDesc}
         </motion.p>
-        <div className="flex items-center justify-center gap-10 w-full max-w-5xl mx-auto">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 w-full max-w-5xl mx-auto px-2">
           {translations[language].storySteps.map((item, idx, arr) => (
             <React.Fragment key={item.year}>
               <motion.div
@@ -249,14 +256,20 @@ export default function AboutUs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: idx * 0.18 }}
                 viewport={{ once: true }}
-                className="flex flex-col items-center"
+                className="flex flex-col items-center w-full md:w-auto"
               >
-                <span className="text-4xl text-purple-700 dark:text-purple-300 mb-2">{item.icon}</span>
+                <span className="text-4xl text-purple-700 dark:text-purple-300 mb-2">
+                  <img src={item.icon} alt={item.title} className="w-8 h-8 object-contain" />
+                </span>
                 <span className="text-lg text-black dark:text-white font-semibold mb-1">{item.year}</span>
                 <span className="text-base text-gray-700 dark:text-gray-200 text-center">{item.text}</span>
               </motion.div>
               {idx < arr.length - 1 && (
-                <div className="w-16 h-1 bg-purple-300 dark:bg-purple-700 mx-2 rounded-full"></div>
+                <>
+                  {/* Horizontal connector for desktop, vertical for mobile */}
+                  <div className="hidden md:block w-16 h-1 bg-purple-300 dark:bg-purple-700 mx-2 rounded-full"></div>
+                  <div className="block md:hidden w-1 h-8 bg-purple-300 dark:bg-purple-700 my-2 rounded-full"></div>
+                </>
               )}
             </React.Fragment>
           ))}
@@ -264,7 +277,7 @@ export default function AboutUs() {
       </section>
 
       {/* Expert Team Section - AI Tools */}
-      <section className="w-full py-10 flex flex-col items-center bg-white dark:bg-black">
+      <section className="w-full py-10 flex flex-col items-center ">
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}

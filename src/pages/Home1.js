@@ -10,6 +10,10 @@ import { useNavigate } from "react-router-dom";
 import client1 from "../images/team2.jpg";
 import client2 from "../images/team3.jpg";
 import client3 from "../images/team4.jpg";
+import contentIcon from "../images/lightbulb.png";
+import picture from "../images/picture.png";
+import barchart from "../images/barchart.png";
+import computer from "../images/computer.png";
 
 const aiTools = [
   {
@@ -62,7 +66,7 @@ const aiTools = [
 //     title: 'Data Analyst, Fortitude Corp.',
 //     avatar: client3
 //   }
-// ];
+// };
 const translations = {
   en: {
     heroTitle: "AI Tools for the Future",
@@ -274,7 +278,7 @@ const Home1 = () => {
             muted
           />
           {/* Overlay and Content */}
-          <div className="absolute inset-0 bg-black/70  z-10 flex flex-col justify-center items-center text-center px-4">
+          <div className="absolute inset-0 bg-black/30  z-10 flex flex-col justify-center items-center text-center px-4">
             <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-6 drop-shadow-lg">{translations[language].heroTitle}</h1>
             <p className="text-lg md:text-2xl text-white mb-8 max-w-2xl mx-auto">{translations[language].heroDesc}</p>
             <div className="flex gap-4 justify-center">
@@ -312,7 +316,7 @@ const Home1 = () => {
               viewport={{ once: true }}
               className="flex items-start gap-4"
             >
-              <span className="text-3xl">💡</span>
+              <span className="text-3xl"><img src={contentIcon} alt="Content Generation" className="w-10 h-10 object-contain" /></span>
               <div>
                 <h3 className="font-semibold text-black dark:text-white text-lg mb-1">{translations[language].leftFeature1Title}</h3>
                 <p className="text-gray-700 dark:text-gray-300 text-sm">{translations[language].leftFeature1Desc}</p>
@@ -325,7 +329,7 @@ const Home1 = () => {
               viewport={{ once: true }}
               className="flex items-start gap-4"
             >
-              <span className="text-3xl">🖼️</span>
+              <span className="text-3xl"><img src={picture} alt="Image Generation" className="w-10 h-10 object-contain" /></span>
               <div>
                 <h3 className="font-semibold text-black dark:text-white text-lg mb-1">{translations[language].leftFeature2Title}</h3>
                 <p className="text-gray-700 dark:text-gray-300 text-sm">{translations[language].leftFeature2Desc}</p>
@@ -355,7 +359,7 @@ const Home1 = () => {
               viewport={{ once: true }}
               className="flex items-start gap-4"
             >
-              <span className="text-3xl">📊</span>
+              <span className="text-3xl"><img src={barchart} alt="data insights" className="w-10 h-10 object-contain" /></span>
               <div>
                 <h3 className="font-semibold text-black dark:text-white text-lg mb-1">{translations[language].rightFeature1Title}</h3>
                 <p className="text-gray-700 dark:text-gray-300 text-sm">{translations[language].rightFeature1Desc}</p>
@@ -368,7 +372,7 @@ const Home1 = () => {
               viewport={{ once: true }}
               className="flex items-start gap-4"
             >
-              <span className="text-3xl">🤖</span>
+              <span className="text-3xl"><img src={computer} alt="automation" className="w-10 h-10 object-contain" /></span>
               <div>
                 <h3 className="font-semibold text-black dark:text-white text-lg mb-0">{translations[language].rightFeature2Title}</h3>
                 <p className="text-gray-700 dark:text-gray-300 text-sm">{translations[language].rightFeature2Desc}</p>
@@ -381,7 +385,7 @@ const Home1 = () => {
 
 
       {/* Demo Section */}
-      <section className="w-full bg-white dark:bg-black pt-6 pb-10">
+      <section className="w-full bg-purple-50 dark:bg-black  pt-6 pb-10">
         <motion.div
           className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-stretch justify-center gap-12 px-4"
           initial="offscreen"
@@ -446,7 +450,9 @@ const Home1 = () => {
                 viewport={{ once: true }}
                 className="flex items-start gap-6"
               >
-                <div className="w-11 h-11 rounded-full bg-purple-600 text-white flex items-center justify-center text-xl font-bold shadow-lg border-4 border-white dark:border-gray-900">1</div>
+                <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-2xl font-extrabold shadow-xl border-2 border-purple-500 ring-2 ring-purple-200 text-purple-700 mb-2">
+                  1
+                </div>
                 <div>
                   <h3 className="font-bold text-xl text-black dark:text-white mb-1">{translations[language].demoStep1Title || {
                     en: "Input Your Idea",
@@ -468,7 +474,9 @@ const Home1 = () => {
                 viewport={{ once: true }}
                 className="flex items-start gap-6"
               >
-                <div className="w-11 h-11 rounded-full bg-purple-600 text-white flex items-center justify-center text-xl font-bold shadow-lg border-4 border-white dark:border-gray-900">2</div>
+                <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-2xl font-extrabold shadow-xl border-2 border-purple-500 ring-2 ring-purple-200 text-purple-700 mb-2">
+                  2
+                </div>
                 <div>
                   <h3 className="font-bold text-xl text-black dark:text-white mb-1">{translations[language].demoStep2Title || {
                     en: "AI Processing",
@@ -490,7 +498,9 @@ const Home1 = () => {
                 viewport={{ once: true }}
                 className="flex items-start gap-6"
               >
-                <div className="w-11 h-11 rounded-full bg-purple-600 text-white flex items-center justify-center text-xl font-bold shadow-lg border-4 border-white dark:border-gray-900">3</div>
+                <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-2xl font-extrabold shadow-xl border-2 border-purple-500 ring-2 ring-purple-200 text-purple-700 mb-2">
+                  3
+                </div>
                 <div>
                   <h3 className="font-bold text-xl text-black dark:text-white mb-1">{translations[language].demoStep3Title || {
                     en: "Get Instant Results",

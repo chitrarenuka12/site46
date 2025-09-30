@@ -4,23 +4,30 @@ import client1 from "../images/team4.jpg"; // Replace with actual image paths
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import rocket from "../images/rocket.png";
+import lock from "../images/padlock.png";
+import search from "../images/search.png";
+import thunder from "../images/thunder.png";
 import backcta from "../images/cta.jpg"; // Import background image for CTA section
+import schedule from "../images/schedule.png";
+import robot from "../images/robot.png";
+
 const webinars = [
     {
         date: "Sep 18, 2025",
-        icon: "📅",
+        icon: schedule,
         title: "AI for Business Growth",
         desc: "Discover how AI tools can drive efficiency and innovation in your organization."
     },
     {
         date: "Oct 2, 2025",
-        icon: "🤖",
+        icon: robot,
         title: "Mastering AI Automation",
         desc: "Learn best practices for automating workflows and boosting productivity with AI."
     },
     {
         date: "Oct 16, 2025",
-        icon: "🔒",
+        icon: lock,
         title: "AI Security & Compliance",
         desc: "Explore how to keep your AI projects secure and compliant with industry standards."
     }
@@ -49,10 +56,10 @@ const translations = {
     coreBenefits: "Core Benefits",
     coreDesc: "Unlock the full potential of your business with our AI tools. Experience seamless integration, actionable insights, and future-ready automation designed to drive measurable results.",
     benefits: [
-      { icon: "⚡", title: "Instant Automation", desc: "Automate repetitive tasks and workflows to boost productivity and free up your team for creative work." },
-      { icon: "🔍", title: "Smart Insights", desc: "Analyze complex data and get actionable recommendations for smarter decision-making." },
-      { icon: "🔒", title: "Enterprise Security", desc: "Protect your data and operations with advanced AI-driven security and compliance features." },
-      { icon: "🚀", title: "Scalable Integration", desc: "Easily connect AI tools with your existing systems and scale as your business grows." }
+      { icon: thunder, title: "Instant Automation", desc: "Automate repetitive tasks and workflows to boost productivity and free up your team for creative work." },
+      { icon: search, title: "Smart Insights", desc: "Analyze complex data and get actionable recommendations for smarter decision-making." },
+      { icon: lock, title: "Enterprise Security", desc: "Protect your data and operations with advanced AI-driven security and compliance features." },
+      { icon: rocket, title: "Scalable Integration", desc: "Easily connect AI tools with your existing systems and scale as your business grows." }
     ],
     ctaTitle: "Ready to Transform Your Workflow?",
     ctaDesc: "Unlock the power of AI tools and take your productivity to the next level. Start your journey with us today!",
@@ -80,10 +87,10 @@ const translations = {
     coreBenefits: "الفوائد الأساسية",
     coreDesc: "اكتشف الإمكانيات الكاملة لشركتك مع أدوات الذكاء الاصطناعي لدينا. تجربة تكامل سلس، رؤى قابلة للتنفيذ، وأتمتة جاهزة للمستقبل لتحقيق نتائج قابلة للقياس.",
     benefits: [
-      { icon: "⚡", title: "أتمتة فورية", desc: "أتمتة المهام المتكررة وسير العمل لزيادة الإنتاجية وتحرير فريقك للعمل الإبداعي." },
-      { icon: "🔍", title: "رؤى ذكية", desc: "حلل البيانات المعقدة واحصل على توصيات قابلة للتنفيذ لاتخاذ قرارات أكثر ذكاءً." },
-      { icon: "🔒", title: "أمان المؤسسات", desc: "حماية بياناتك وعملياتك بميزات أمان وامتثال متقدمة مدعومة بالذكاء الاصطناعي." },
-      { icon: "🚀", title: "تكامل قابل للتوسع", desc: "اربط أدوات الذكاء الاصطناعي بسهولة بأنظمتك الحالية وتوسع مع نمو عملك." }
+      { icon: thunder, title: "أتمتة فورية", desc: "أتمتة المهام المتكررة وسير العمل لزيادة الإنتاجية وتحرير فريقك للعمل الإبداعي." },
+      { icon: search, title: "رؤى ذكية", desc: "حلل البيانات المعقدة واحصل على توصيات قابلة للتنفيذ لاتخاذ قرارات أكثر ذكاءً." },
+      { icon: lock, title: "أمان المؤسسات", desc: "حماية بياناتك وعملياتك بميزات أمان وامتثال متقدمة مدعومة بالذكاء الاصطناعي." },
+      { icon: rocket, title: "تكامل قابل للتوسع", desc: "اربط أدوات الذكاء الاصطناعي بسهولة بأنظمتك الحالية وتوسع مع نمو عملك." }
     ],
     ctaTitle: "جاهز لتحويل سير عملك؟",
     ctaDesc: "اكتشف قوة أدوات الذكاء الاصطناعي وارتق بإنتاجيتك إلى المستوى التالي. ابدأ رحلتك معنا اليوم!",
@@ -111,10 +118,10 @@ const translations = {
     coreBenefits: "יתרונות מרכזיים",
     coreDesc: "פתח את הפוטנציאל המלא של העסק שלך עם כלי ה-AI שלנו. חווה אינטגרציה חלקה, תובנות מעשיות ואוטומציה מוכנה לעתיד שמביאה תוצאות מדידות.",
     benefits: [
-      { icon: "⚡", title: "אוטומציה מיידית", desc: "אוטומט משימות חוזרות ותהליכים להגדלת פרודוקטיביות ולשחרור הצוות לעבודה יצירתית." },
-      { icon: "🔍", title: "תובנות חכמות", desc: "נתח נתונים מורכבים וקבל המלצות מעשיות לקבלת החלטות חכמות יותר." },
-      { icon: "🔒", title: "אבטחת ארגונים", desc: "הגן על הנתונים והפעילות שלך עם תכונות אבטחה ועמידה בתקנים מתקדמות מבוססות AI." },
-      { icon: "🚀", title: "אינטגרציה ניתנת להרחבה", desc: "חבר בקלות כלי AI למערכות קיימות והרחב עם צמיחת העסק." }
+      { icon: thunder, title: "אוטומציה מיידית", desc: "אוטומט משימות חוזרות ותהליכים להגדלת פרודוקטיביות ולשחרור הצוות לעבודה יצירתית." },
+      { icon: search, title: "תובנות חכמות", desc: "נתח נתונים מורכבים וקבל המלצות מעשיות לקבלת החלטות חכמות יותר." },
+      { icon: lock, title: "אבטחת ארגונים", desc: "הגן על הנתונים והפעילות שלך עם תכונות אבטחה ועמידה בתקנים מתקדמות מבוססות AI." },
+      { icon: rocket, title: "אינטגרציה ניתנת להרחבה", desc: "חבר בקלות כלי AI למערכות קיימות והרחב עם צמיחת העסק." }
     ],
     ctaTitle: "מוכן לשנות את זרימת העבודה שלך?",
     ctaDesc: "גלה את כוח כלי ה-AI וקח את הפרודוקטיביות שלך לשלב הבא. התחל את המסע שלך איתנו היום!",
@@ -305,7 +312,7 @@ const Home2 = () => {
                                 className="relative flex items-center gap-6"
                             >
                                 <div className="z-10 w-14 h-14 aspect-square rounded-full bg-purple-700 flex items-center justify-center text-2xl font-bold text-white shadow-lg border-4 border-white dark:border-black">
-                                    <span role="img" aria-label="calendar">{webinar.icon}</span>
+                                    <img src={webinar.icon} alt={webinar.title} className="w-8 h-8 object-contain" />
                                 </div>
                                 <div className="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 border border-purple-200 dark:border-purple-700 flex-1">
                                     <div className="text-purple-600 dark:text-purple-300 font-bold text-lg mb-2">{webinar.date}</div>
@@ -366,7 +373,9 @@ const Home2 = () => {
                                 viewport={{ once: true }}
                                 className="rounded-2xl p-8 shadow-xl border-2 border-purple-400 bg-purple-500 flex flex-col items-center text-center hover:scale-105 transition-transform"
                             >
-                                <div className="w-16 h-16 rounded-full bg-purple-700 flex items-center justify-center text-3xl mb-4 text-white shadow-lg">{benefit.icon}</div>
+                                <div className="w-16 h-16 rounded-full bg-purple-700 flex items-center justify-center text-3xl mb-4 text-white shadow-lg">
+                                  <img src={benefit.icon} alt={benefit.title} className="w-8 h-8 object-contain" />
+                                </div>
                                 <h3 className="font-bold text-xl text-white mb-2">{benefit.title}</h3>
                                 <p className="text-white text-sm mb-2">{benefit.desc}</p>
                                 <span className="block w-8 h-1 bg-purple-400 rounded-full mt-4 animate-pulse"></span>

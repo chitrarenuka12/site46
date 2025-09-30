@@ -172,19 +172,6 @@ const Header = ({ toggleTheme, isDark }) => {
         </Link>
       </nav>
 
-      {/* Hamburger (mobile only) */}
-      <button
-        className={`md:hidden flex flex-col gap-1.5 ${
-          mobileNavOpen ? "open" : ""
-        }`}
-        aria-label="Toggle menu"
-        onClick={toggleMobileNav}
-      >
-        <span className="w-6 h-0.5 bg-current transition-all"></span>
-        <span className="w-6 h-0.5 bg-current transition-all"></span>
-        <span className="w-6 h-0.5 bg-current transition-all"></span>
-      </button>
-
       {/* Nav Links */}
       <nav
         className={`${
@@ -308,12 +295,12 @@ const Header = ({ toggleTheme, isDark }) => {
       </nav>
 
       {/* Right Section */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2">
         {/* Language Dropdown */}
         <select
           value={language}
           onChange={(e) => setLanguage(e.target.value)}
-          className="border rounded px-2 py-1 mr-2 bg-white dark:bg-gray-800 text-black dark:text-white"
+          className="border rounded px-2 py-1 bg-white dark:bg-gray-800 text-black dark:text-white"
         >
           <option value="en">English</option>
           <option value="ar">العربية</option>
@@ -330,7 +317,7 @@ const Header = ({ toggleTheme, isDark }) => {
         {/* Avatar */}
         <div ref={avatarRef} className="relative">
           <div
-            className="w-10 h-10 bg-blue-800 text-white flex items-center justify-center rounded-full font-bold cursor-pointer"
+            className="w-10 h-10 bg-purple-600 text-white flex items-center justify-center rounded-full font-bold cursor-pointer"
             onClick={toggleAvatarDropdown}
           >
             {initials || "AD"}
@@ -346,6 +333,16 @@ const Header = ({ toggleTheme, isDark }) => {
             </div>
           )}
         </div>
+        {/* Hamburger (mobile only) - neat and visible */}
+        <button
+          className="md:hidden flex flex-col justify-center items-center ml-2 p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none"
+          aria-label="Toggle menu"
+          onClick={toggleMobileNav}
+        >
+          <span className="block w-6 h-0.5 bg-black dark:bg-white mb-1"></span>
+          <span className="block w-6 h-0.5 bg-black dark:bg-white mb-1"></span>
+          <span className="block w-6 h-0.5 bg-black dark:bg-white"></span>
+        </button>
       </div>
     </header>
   );

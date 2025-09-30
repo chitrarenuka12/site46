@@ -3,7 +3,16 @@ import { motion } from "framer-motion";
 import heroVideo from "../images/ai-demo.mp4";
 import { useNavigate } from "react-router-dom";
 import chatbot from "../images/chatbot.jpg";
-
+import assistant from "../images/assistant.png";
+import integrate from "../images/system-integration.png";
+import books from "../images/books.png";
+import robot from "../images/robot.png";
+import chat from "../images/chat.png";
+import ecommerce from "../images/ecommerce.png";
+import healthcare from "../images/medical-app.png";
+import education from "../images/university.png";
+import plane from "../images/plane.png";
+import accounts from "../images/accounts.png";
 const translations = {
   en: {
     heroTitle: "AI Chatbots & Assistants",
@@ -26,10 +35,10 @@ const translations = {
     ],
     howWorksTitle: "How It Works",
     howWorksSteps: [
-      { icon: "🧑‍💻", title: "Choose Your Assistant", desc: "Select a chatbot template or build your own." },
-      { icon: "🔗", title: "Integrate & Configure", desc: "Connect to your platforms and set up workflows." },
-      { icon: "📚", title: "Train & Test", desc: "Upload FAQs, scripts, and test conversations." },
-      { icon: "🚀", title: "Go Live & Monitor", desc: "Launch your assistant and track performance." }
+      { icon: assistant, title: "Choose Your Assistant", desc: "Select a chatbot template or build your own." },
+      { icon: integrate, title: "Integrate & Configure", desc: "Connect to your platforms and set up workflows." },
+      { icon: books, title: "Train & Test", desc: "Upload FAQs, scripts, and test conversations." },
+      { icon: robot, title: "Go Live & Monitor", desc: "Launch your assistant and track performance." }
     ],
     overviewTitle: "What Makes Our Chatbot Assistants Unique?",
     overviewDesc: "Our AI-powered assistants combine natural language understanding, contextual memory, and seamless integration to deliver personalized, efficient, and secure experiences for your users.",
@@ -42,12 +51,12 @@ const translations = {
     overviewBtn: "Learn More",
     useCasesTitle: "AI Chatbot Use Cases",
     useCases: [
-      { icon: "💬", title: "Customer Support", desc: "Instantly resolve queries and provide 24/7 assistance." },
-      { icon: "🛒", title: "E-Commerce", desc: "Guide users, recommend products, and boost sales." },
-      { icon: "🏥", title: "Healthcare", desc: "Schedule appointments and answer health FAQs securely." },
-      { icon: "🎓", title: "Education", desc: "Personalized tutoring and homework help for students." },
-      { icon: "✈️", title: "Travel & Booking", desc: "Manage reservations and provide travel info instantly." },
-      { icon: "🏦", title: "Finance", desc: "Assist with account info, payments, and financial advice." }
+      { icon: chat , title: "Customer Support", desc: "Instantly resolve queries and provide 24/7 assistance." },
+      { icon: ecommerce, title: "E-Commerce", desc: "Guide users, recommend products, and boost sales." },
+      { icon: healthcare, title: "Healthcare", desc: "Schedule appointments and answer health FAQs securely." },
+      { icon: education, title: "Education", desc: "Personalized tutoring and homework help for students." },
+      { icon: plane, title: "Travel & Booking", desc: "Manage reservations and provide travel info instantly." },
+      { icon: accounts, title: "Finance", desc: "Assist with account info, payments, and financial advice." }
     ],
     personalitiesTitle: "Chatbot & Assistant Personalities",
     personalitiesDesc: "Our AI assistants are more than just tools—they're digital personalities designed to fit your brand, engage users, and deliver memorable experiences in every conversation.",
@@ -98,12 +107,12 @@ const translations = {
     overviewBtn: "اعرف المزيد",
     useCasesTitle: "حالات استخدام روبوتات الدردشة الذكية",
     useCases: [
-      { icon: "💬", title: "دعم العملاء", desc: "حل الاستفسارات فورًا وتقديم المساعدة على مدار الساعة." },
-      { icon: "🛒", title: "التجارة الإلكترونية", desc: "إرشاد المستخدمين، توصية المنتجات، وزيادة المبيعات." },
-      { icon: "🏥", title: "الرعاية الصحية", desc: "جدولة المواعيد والإجابة على الأسئلة الصحية بأمان." },
-      { icon: "🎓", title: "التعليم", desc: "دروس شخصية ومساعدة في الواجبات للطلاب." },
-      { icon: "✈️", title: "السفر والحجوزات", desc: "إدارة الحجوزات وتقديم معلومات السفر فورًا." },
-      { icon: "🏦", title: "التمويل", desc: "المساعدة في المعلومات المالية والمدفوعات والنصائح." }
+      { icon: chat, title: "دعم العملاء", desc: "حل الاستفسارات فورًا وتقديم المساعدة على مدار الساعة." },
+      { icon: ecommerce, title: "التجارة الإلكترونية", desc: "إرشاد المستخدمين، توصية المنتجات، وزيادة المبيعات." },
+      { icon: healthcare, title: "الرعاية الصحية", desc: "جدولة المواعيد والإجابة على الأسئلة الصحية بأمان." },
+      { icon: education, title: "التعليم", desc: "دروس شخصية ومساعدة في الواجبات للطلاب." },
+      { icon: plane, title: "السفر والحجوزات", desc: "إدارة الحجوزات وتقديم معلومات السفر فورًا." },
+      { icon: accounts, title: "التمويل", desc: "المساعدة في المعلومات المالية والمدفوعات والنصائح." }
     ],
     personalitiesTitle: "شخصيات روبوت الدردشة والمساعد",
     personalitiesDesc: "مساعدونا الرقميون أكثر من مجرد أدوات—إنهم شخصيات رقمية مصممة لتناسب علامتك التجارية وتفاعل المستخدمين وتقديم تجارب لا تُنسى.",
@@ -138,10 +147,10 @@ const translations = {
     ],
     howWorksTitle: "איך זה עובד",
     howWorksSteps: [
-      { icon: "🧑‍💻", title: "בחר עוזר", desc: "בחר תבנית צ'אטבוט או בנה משלך." },
-      { icon: "🔗", title: "אינטגרציה והגדרות", desc: "חבר לפלטפורמות והגדר תהליכים." },
-      { icon: "📚", title: "הדרכה ובדיקה", desc: "העלה שאלות ותסריטים ובדוק שיחות." },
-      { icon: "🚀", title: "הפעל ומדוד", desc: "הפעל את העוזר ומדוד ביצועים." }
+      { icon: assistant, title: "בחר עוזר", desc: "בחר תבנית צ'אטבוט או בנה משלך." },
+      { icon: integrate, title: "אינטגרציה והגדרות", desc: "חבר לפלטפורמות והגדר תהליכים." },
+      { icon: books, title: "הדרכה ובדיקה", desc: "העלה שאלות ותסריטים ובדוק שיחות." },
+      { icon: robot, title: "הפעל ומדוד", desc: "הפעל את העוזר ומדוד ביצועים." }
     ],
     overviewTitle: "מה הופך את העוזרים שלנו לייחודיים؟",
     overviewDesc: "העוזרים שלנו משלבים הבנת שפה טבעית, זיכרון הקשרי ואינטגרציה חלקה לחוויות מותאמות, יעילות ובטוחות.",
@@ -154,12 +163,12 @@ const translations = {
     overviewBtn: "למידע נוסף",
     useCasesTitle: "שימושים לצ'אטבוטים חכמים",
     useCases: [
-      { icon: "💬", title: "תמיכת לקוחות", desc: "פתרון פניות מיידי ותמיכה מסביב לשעון." },
-      { icon: "🛒", title: "מסחר אלקטרוני", desc: "הכוונת משתמשים, המלצות ומכירות." },
-      { icon: "🏥", title: "בריאות", desc: "קביעת תורים ומענה לשאלות רפואיות בבטחה." },
-      { icon: "🎓", title: "חינוך", desc: "הדרכה אישית ועזרה בשיעורי בית." },
-      { icon: "✈️", title: "נסיעות והזמנות", desc: "ניהול הזמנות ומתן מידע נסיעות מיידי." },
-      { icon: "🏦", title: "פיננסים", desc: "סיוע במידע, תשלומים וייעוץ פיננסי." }
+      { icon: chat, title: "תמיכת לקוחות", desc: "פתרון פניות מיידי ותמיכה מסביב לשעון." },
+      { icon: ecommerce, title: "מסחר אלקטרוני", desc: "הכוונת משתמשים, המלצות ומכירות." },
+      { icon: healthcare, title: "בריאות", desc: "קביעת תורים ומענה לשאלות רפואיות בבטחה." },
+      { icon: education, title: "חינוך", desc: "הדרכה אישית ועזרה בשיעורי בית." },
+      { icon: plane, title: "נסיעות והזמנות", desc: "ניהול הזמנות ומתן מידע נסיעות מיידי." },
+      { icon: accounts, title: "פיננסים", desc: "סיוע במידע, תשלומים וייעוץ פיננסי." }
     ],
     personalitiesTitle: "אישיות הצ'אטבוט והעוזר",
     personalitiesDesc: "העוזרים שלנו הם יותר מכלי—they're דמויות דיגיטליות שמותאמות למותג שלך, מעוררות משתמשים ומספקות חוויות בלתי נשכחות.",
@@ -239,7 +248,7 @@ function Chatbots() {
       </section>
 
       {/* Features & Benefits */}
-      <section className="py-20 px-4 bg-white dark:bg-black">
+      <section className="py-20 px-4 bg-purple-50 dark:bg-black">
         <motion.div
           className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-12"
           initial={{ opacity: 0, y: 40 }}
@@ -295,7 +304,9 @@ function Chatbots() {
               <div key={idx} className="flip-card w-64 h-64">
                 <div className="flip-card-inner group relative w-full h-full">
                   <div className="flip-card-front absolute w-full h-full bg-white dark:bg-gray-900 rounded-2xl shadow-lg border border-purple-100 dark:border-purple-700 flex flex-col items-center justify-center text-center transition-transform duration-500 group-hover:rotate-y-180">
-                    <div className="w-16 h-16 flex items-center justify-center rounded-full bg-purple-700 dark:bg-purple-400 text-white text-3xl font-bold mb-4">{step.icon}</div>
+                    <div className="w-16 h-16 flex items-center justify-center rounded-full bg-purple-700 dark:bg-purple-400 text-white text-3xl font-bold mb-4">
+                      <img src={step.icon} alt={step.title} className="w-10 h-10 object-contain" />
+                    </div>
                     <h3 className="text-xl font-bold text-purple-700 dark:text-purple-300 mb-2">{step.title}</h3>
                     <p className="text-gray-700 dark:text-gray-300">Step {idx + 1}</p>
                   </div>
@@ -318,7 +329,7 @@ function Chatbots() {
       </section>
 
       {/* Chatbot Assistant Overview */}
-      <section className="py-10 px-4 bg-white dark:bg-black">
+      <section className="py-10 px-4 bg-purple-50 dark:bg-black">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2 w-full flex justify-center mb-8 md:mb-0">
             <img src={chatbot} alt="AI Chatbot Assistant" className="rounded-3xl shadow-xl w-full max-w-md object-cover" />
@@ -364,7 +375,9 @@ function Chatbots() {
                 transition={{ duration: 0.6, delay: idx * 0.12 }}
                 viewport={{ once: true }}
               >
-                <div className="w-14 h-14 flex items-center justify-center rounded-full bg-purple-700 dark:bg-purple-400 text-white dark:text-black text-3xl font-bold mb-4">{use.icon}</div>
+                <div className="w-14 h-14 flex items-center justify-center rounded-full bg-purple-700 dark:bg-purple-400 text-white dark:text-black text-3xl font-bold mb-4">
+                  <img src={use.icon} alt={use.title} className="w-8 h-8 object-contain" />
+                </div>
                 <h3 className="text-xl font-bold text-purple-700 dark:text-purple-300 mb-2 text-center">{use.title}</h3>
                 <p className="text-black dark:text-white text-sm text-center">{use.desc}</p>
               </motion.div>
@@ -378,7 +391,7 @@ function Chatbots() {
       </section>
 
       {/* Chatbot & Assistant Personalities */}
-      <section className="py-10 px-4 bg-white dark:bg-black">
+      <section className="py-10 px-4 bg-purple-50 dark:bg-black">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2 w-full mb-8 md:mb-0 flex flex-col justify-center">
             <h2 className="text-5xl font-extrabold text-black dark:text-white mb-6 leading-tight">

@@ -8,7 +8,14 @@ import dataAnalytics from "../images/dataanalysis.jpg";
 import designIntelligence from "../images/designsolutions.jpg";
 import securitySolutions from "../images/security.jpg";
 import { useNavigate } from "react-router-dom";
+import api from "../images/api.png";
+import responsive from  "../images/responsive-design.png";
 
+import solutions from "../images/solutions.png";
+import coding from "../images/coding.png";
+import file from "../images/file.png";
+import process from "../images/process.png";
+import input from "../images/check-mark.png";
 // Translations object for all UI text and arrays
 const translations = {
   en: {
@@ -162,72 +169,45 @@ const steps = [
         step: 1,
         title: "Select Your Tool",
         description: "Choose from our diverse range of AI-powered tools tailored to your specific needs",
-        icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-            </svg>
-        )
+        icon: coding
     },
     {
         step: 2,
         title: "Input Your Data",
         description: "Provide the necessary information or upload files for the AI to process",
-        icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-        )
+        icon: file
     },
     {
         step: 3,
         title: "AI Processing",
         description: "Our advanced algorithms analyze and process your data with cutting-edge AI technology",
-        icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-        )
+        icon: process
+       
     },
     {
         step: 4,
         title: "Receive Results",
         description: "Get your processed output, insights, or generated content delivered instantly",
-        icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-        )
+        icon: input
     }
 ];
 const integrations = [
     {
         name: "API Access",
         description: "Seamlessly integrate our AI capabilities into your existing applications",
-        icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-        ),
+        icon: api,
         features: ["RESTful API", "Webhooks", "Comprehensive Documentation"]
     },
     {
         name: "Platform Plugins",
         description: "Install ready-made plugins for popular platforms and CMS",
-        icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-            </svg>
-        ),
+        icon: responsive,
         features: ["WordPress", "Shopify", "Salesforce", "Zapier"]
     },
     {
         name: "Custom Solutions",
         description: "Tailor-made AI implementations for your specific business needs",
-        icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-            </svg>
-        ),
+        icon: solutions,
         features: ["White-label Options", "Custom Training", "Dedicated Support"]
     }
 ];
@@ -424,7 +404,11 @@ export default function Services() {
             {integrations.map((integration, index) => (
               <div key={index} className="bg-white dark:bg-black p-8 rounded-2xl shadow-md hover:shadow-lg transition-shadow border border-purple-200 dark:border-purple-700">
                 <div className="text-purple-700 dark:text-purple-300 mb-6">
-                  {integration.icon}
+                  {typeof integration.icon === 'string' ? (
+                    <img src={integration.icon} alt={integration.name} className="h-12 w-12 object-contain" />
+                  ) : (
+                    integration.icon
+                  )}
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-black dark:text-white">{integration.name}</h3>
                 <p className="text-gray-700 dark:text-gray-200 mb-6">{integration.description}</p>
@@ -467,7 +451,7 @@ export default function Services() {
                 )}
                 <div className="relative z-10 bg-white dark:bg-black p-6 rounded-2xl h-full border border-purple-200 dark:border-purple-700 shadow-xl transform hover:-translate-y-2 transition-transform duration-300">
                   <div className="w-16 h-16 rounded-full bg-purple-700 dark:bg-purple-400 flex items-center justify-center mb-6 mx-auto">
-                    {step.icon}
+                    <img src={step.icon} alt={step.title} className="w-8 h-8 object-contain" />
                   </div>
                   <div className="text-center">
                     <div className="w-8 h-8 rounded-full bg-purple-400 dark:bg-purple-700 flex items-center justify-center text-white font-bold mb-4 mx-auto">
@@ -548,7 +532,7 @@ export default function Services() {
                       className="flex items-start"
                     >
                       <svg
-                        className={`h-6 w-6 mr-2 flex-shrink-0 ${plan.popular ? "text-purple-300" : "text-green-500"}`}
+                        className={`h-6 w-6 mr-2 flex-shrink-0 ${plan.popular ? "text-purple-300" : "text-black dark:text-white"}`}
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"

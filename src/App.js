@@ -79,7 +79,7 @@ function App() {
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/admin" element={<AdminDashboard />} />
         </Routes>
-        <Footer />
+        {!isLoginPage && <Footer />}
       </main>
     </div>
   );

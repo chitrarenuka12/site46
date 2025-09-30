@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import loginback from '../images/login-back.jpg';
+import logo from '../images/logo.png';
 
 const translations = {
   en: {
@@ -175,54 +176,72 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-cover bg-center pt-16" style={{ backgroundImage: `url(${loginback})` }}>
-      <div className="w-full max-w-md bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl shadow-2xl p-8 flex flex-col items-center border border-purple-500 border-opacity-40">
+    <div className="min-h-screen flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: `url(${loginback})` }}>
+      <div className="w-full max-w-lg bg-white bg-opacity-15 backdrop-blur-lg rounded-3xl shadow-2xl p-8 flex flex-col items-center border border-purple-400 border-opacity-50 mx-4">
         {/* Language Dropdown */}
         <div className="w-full flex justify-end mb-4">
           <select
             value={language}
             onChange={e => setLanguage(e.target.value)}
-            className="p-2 rounded border border-purple-400 bg-white text-black font-bold"
+            className="p-2 rounded-lg border border-purple-400 bg-white text-black font-semibold shadow-md"
           >
             <option value="en">English</option>
             <option value="ar">العربية</option>
             <option value="he">עברית</option>
           </select>
         </div>
+
+        {/* Logo Section */}
+        <div className="flex items-center justify-center mb-4">
+          <img 
+            src={logo} 
+            alt="STACKLY Logo" 
+            className="h-16 w-auto bg-white rounded-xl p-2 shadow-lg"
+          />
+        </div>
+
+        {/* Welcome Text */}
+        <p className="mb-6 text-white text-center text-lg font-medium">
+          {t.loginDesc}
+        </p>
+
         {!isForgotPassword ? (
           <>
-            <h1 className="text-3xl font-bold text-purple-600 mb-2">
-              {isLogin ? t.welcome : t.register}
-              <span className="text-black">{t.stackly}</span>
-            </h1>
-            <p className="mb-6 text-white">
-              {t.loginDesc}
-            </p>
             {isLogin ? (
               <form
                 onSubmit={handleLoginSubmit}
                 className="w-full flex flex-col gap-4"
               >
-                <input
-                  className="p-3 text-base border border-purple-400 rounded focus:outline-none focus:border-purple-600 bg-white text-black"
-                  type="email"
-                  name="email"
-                  placeholder={t.username}
-                  value={loginData.email}
-                  onChange={handleLoginChange}
-                  required
-                />
-                <input
-                  className="p-3 text-base border border-purple-400 rounded focus:outline-none focus:border-purple-600 bg-white text-black"
-                  type="password"
-                  name="password"
-                  placeholder={t.password}
-                  value={loginData.password}
-                  onChange={handleLoginChange}
-                  required
-                />
+                <div className="flex flex-col gap-1">
+                  <label className="text-white font-semibold text-sm">
+                    {t.username} <span className="text-red-400">*</span>
+                  </label>
+                  <input
+                    className="p-3 text-base border border-purple-400 rounded-lg focus:outline-none focus:border-purple-600 focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 bg-white text-black shadow-md transition-all duration-300"
+                    type="email"
+                    name="email"
+                    placeholder={t.username}
+                    value={loginData.email}
+                    onChange={handleLoginChange}
+                    required
+                  />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <label className="text-white font-semibold text-sm">
+                    {t.password} <span className="text-red-400">*</span>
+                  </label>
+                  <input
+                    className="p-3 text-base border border-purple-400 rounded-lg focus:outline-none focus:border-purple-600 focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 bg-white text-black shadow-md transition-all duration-300"
+                    type="password"
+                    name="password"
+                    placeholder={t.password}
+                    value={loginData.password}
+                    onChange={handleLoginChange}
+                    required
+                  />
+                </div>
                 <p
-                  className="text-right text-white cursor-pointer text-sm font-bold mt-[-10px]"
+                  className="text-right text-white cursor-pointer text-sm font-bold hover:text-purple-300 transition-colors duration-300"
                   onClick={() => {
                     setError("");
                     setIsForgotPassword(true);
@@ -233,18 +252,21 @@ const Login = () => {
                 </p>
                 <button
                   type="submit"
-                  className="bg-purple-600 text-white font-bold border-none p-3 rounded mt-2 transition-colors duration-300 hover:bg-purple-800"
+                  className="bg-purple-600 text-white font-bold border-none p-3 rounded-lg mt-2 transition-all duration-300 hover:bg-purple-700 hover:shadow-lg transform hover:scale-105"
                 >
                   {t.loginBtn}
                 </button>
-                <p
-                  className="cursor-pointer text-white mt-4 text-center font-bold"
-                  onClick={() => {
-                    setError("");
-                    setIsLogin(false);
-                  }}
-                >
-                  {t.signupPrompt}
+                <p className="text-white mt-3 text-center font-semibold">
+                  Don't have an account? {" "}
+                  <span
+                    className="cursor-pointer text-purple-300 hover:text-purple-200 transition-colors duration-300 underline"
+                    onClick={() => {
+                      setError("");
+                      setIsLogin(false);
+                    }}
+                  >
+                    Sign Up
+                  </span>
                 </p>
               </form>
             ) : (
@@ -252,101 +274,143 @@ const Login = () => {
                 onSubmit={handleSignUpSubmit}
                 className="w-full flex flex-col gap-4"
               >
-                <input
-                  className="p-3 text-base border border-purple-400 rounded focus:outline-none focus:border-purple-600 bg-white text-black"
-                  type="text"
-                  name="firstName"
-                  placeholder={t.firstName}
-                  value={signUpData.firstName}
-                  onChange={handleSignUpChange}
-                  required
-                />
-                <input
-                  className="p-3 text-base border border-purple-400 rounded focus:outline-none focus:border-purple-600 bg-white text-black"
-                  type="text"
-                  name="lastName"
-                  placeholder={t.lastName}
-                  value={signUpData.lastName}
-                  onChange={handleSignUpChange}
-                  required
-                />
-                <input
-                  className="p-3 text-base border border-purple-400 rounded focus:outline-none focus:border-purple-600 bg-white text-black"
-                  type="email"
-                  name="email"
-                  placeholder={t.username}
-                  value={signUpData.email}
-                  onChange={handleSignUpChange}
-                  required
-                />
-                <input
-                  className="p-3 text-base border border-purple-400 rounded focus:outline-none focus:border-purple-600 bg-white text-black"
-                  type="password"
-                  name="password"
-                  placeholder={t.password}
-                  value={signUpData.password}
-                  onChange={handleSignUpChange}
-                  required
-                />
+                <div className="flex flex-col gap-1">
+                  <label className="text-white font-semibold text-sm">
+                    {t.firstName} <span className="text-red-400">*</span>
+                  </label>
+                  <input
+                    className="p-3 text-base border border-purple-400 rounded-lg focus:outline-none focus:border-purple-600 focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 bg-white text-black shadow-md transition-all duration-300"
+                    type="text"
+                    name="firstName"
+                    placeholder={t.firstName}
+                    value={signUpData.firstName}
+                    onChange={handleSignUpChange}
+                    required
+                  />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <label className="text-white font-semibold text-sm">
+                    {t.lastName} <span className="text-red-400">*</span>
+                  </label>
+                  <input
+                    className="p-3 text-base border border-purple-400 rounded-lg focus:outline-none focus:border-purple-600 focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 bg-white text-black shadow-md transition-all duration-300"
+                    type="text"
+                    name="lastName"
+                    placeholder={t.lastName}
+                    value={signUpData.lastName}
+                    onChange={handleSignUpChange}
+                    required
+                  />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <label className="text-white font-semibold text-sm">
+                    {t.username} <span className="text-red-400">*</span>
+                  </label>
+                  <input
+                    className="p-3 text-base border border-purple-400 rounded-lg focus:outline-none focus:border-purple-600 focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 bg-white text-black shadow-md transition-all duration-300"
+                    type="email"
+                    name="email"
+                    placeholder={t.username}
+                    value={signUpData.email}
+                    onChange={handleSignUpChange}
+                    required
+                  />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <label className="text-white font-semibold text-sm">
+                    {t.password} <span className="text-red-400">*</span>
+                  </label>
+                  <input
+                    className="p-3 text-base border border-purple-400 rounded-lg focus:outline-none focus:border-purple-600 focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 bg-white text-black shadow-md transition-all duration-300"
+                    type="password"
+                    name="password"
+                    placeholder={t.password}
+                    value={signUpData.password}
+                    onChange={handleSignUpChange}
+                    required
+                  />
+                </div>
                 <button
                   type="submit"
-                  className="bg-purple-600 text-white font-bold border-none p-3 rounded mt-2 transition-colors duration-300 hover:bg-purple-800"
+                  className="bg-purple-600 text-white font-bold border-none p-3 rounded-lg mt-2 transition-all duration-300 hover:bg-purple-700 hover:shadow-lg transform hover:scale-105"
                 >
                   {t.signupBtn}
                 </button>
-                <p
-                  className="cursor-pointer text-white mt-4 text-center font-bold"
-                  onClick={() => {
-                    setError("");
-                    setIsLogin(true);
-                  }}
-                >
-                  {t.alreadyPrompt}
+                <p className="text-white mt-3 text-center font-semibold">
+                  Already have an account? {" "}
+                  <span
+                    className="cursor-pointer text-purple-300 hover:text-purple-200 transition-colors duration-300 underline"
+                    onClick={() => {
+                      setError("");
+                      setIsLogin(true);
+                    }}
+                  >
+                    Login
+                  </span>
                 </p>
               </form>
             )}
-            {error && <p className="text-purple-500 mt-2 font-bold">{error}</p>}
+            {error && (
+              <p className="text-red-400 mt-3 font-bold text-center bg-red-100 bg-opacity-20 p-2 rounded-lg">
+                {error}
+              </p>
+            )}
             {resetMessage && (
-              <p className="text-purple-500 mt-2 font-bold">{resetMessage}</p>
+              <p className="text-green-400 mt-3 font-bold text-center bg-green-100 bg-opacity-20 p-2 rounded-lg">
+                {resetMessage}
+              </p>
             )}
           </>
         ) : (
           <>
-            <h2 className="text-2xl md:text-3xl font-bold mb-2 text-purple-600">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-purple-300 text-center">
               {t.resetTitle}
             </h2>
             <form
               onSubmit={handleForgotPasswordSubmit}
               className="w-full flex flex-col gap-4"
             >
-              <input
-                className="p-3 text-base border border-purple-400 rounded focus:outline-none focus:border-purple-600 bg-white text-black"
-                type="email"
-                placeholder={t.resetPlaceholder}
-                value={forgotEmail}
-                onChange={handleForgotPasswordChange}
-                required
-              />
+              <div className="flex flex-col gap-1">
+                <label className="text-white font-semibold text-sm">
+                  {t.resetPlaceholder} <span className="text-red-400">*</span>
+                </label>
+                <input
+                  className="p-3 text-base border border-purple-400 rounded-lg focus:outline-none focus:border-purple-600 focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 bg-white text-black shadow-md transition-all duration-300"
+                  type="email"
+                  placeholder={t.resetPlaceholder}
+                  value={forgotEmail}
+                  onChange={handleForgotPasswordChange}
+                  required
+                />
+              </div>
               <button
                 type="submit"
-                className="bg-purple-600 text-white font-bold border-none p-3 rounded mt-2 transition-colors duration-300 hover:bg-purple-800"
+                className="bg-purple-600 text-white font-bold border-none p-3 rounded-lg mt-2 transition-all duration-300 hover:bg-purple-700 hover:shadow-lg transform hover:scale-105"
               >
                 {t.sendReset}
               </button>
-              <p
-                className="cursor-pointer text-purple-600 mt-4 text-center font-bold"
-                onClick={() => {
-                  setError("");
-                  setResetMessage("");
-                  setIsForgotPassword(false);
-                }}
-              >
-                {t.backToLogin}
+              <p className="text-purple-300 mt-3 text-center font-semibold">
+                <span
+                  className="cursor-pointer hover:text-white transition-colors duration-300 underline"
+                  onClick={() => {
+                    setError("");
+                    setResetMessage("");
+                    setIsForgotPassword(false);
+                  }}
+                >
+                  {t.backToLogin}
+                </span>
               </p>
             </form>
-            {error && <p className="text-purple-500 mt-2 font-bold">{error}</p>}
+            {error && (
+              <p className="text-red-400 mt-3 font-bold text-center bg-red-100 bg-opacity-20 p-2 rounded-lg">
+                {error}
+              </p>
+            )}
             {resetMessage && (
-              <p className="text-purple-500 mt-2 font-bold">{resetMessage}</p>
+              <p className="text-green-400 mt-3 font-bold text-center bg-green-100 bg-opacity-20 p-2 rounded-lg">
+                {resetMessage}
+              </p>
             )}
           </>
         )}

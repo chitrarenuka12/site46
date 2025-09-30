@@ -3,6 +3,18 @@ import { motion } from "framer-motion";
 import heroVideo from "../images/data-analytics.mp4";
 import { useNavigate } from "react-router-dom";
 import dataanalysis from "../images/dataanalysis.jpg";
+import integration from "../images/integration.png";
+import lightbulb from "../images/lightbulb.png";
+import barchart from "../images/barchart.png";
+import robot from "../images/robot.png";
+import chart from "../images/line-chart.png";
+import money from "../images/money-bag.png";  
+import operations from "../images/vehicle.png";
+import consultant from "../images/consultation.png";
+import healthcare from "../images/medical-app.png";
+import notification from "../images/notification-bell.png";
+import thunder from "../images/thunder.png";
+import partners from "../images/partners.png";
 
 // Translations object for all UI text and arrays
 const translations = {
@@ -28,10 +40,10 @@ const translations = {
     ],
     howWorksTitle: "How It Works",
     howWorksSteps: [
-      { icon: "🔗", title: "Connect Data Sources", desc: "Link databases, files, or APIs." },
-      { icon: "📊", title: "Analyze & Visualize", desc: "Explore data with AI-powered charts and models." },
-      { icon: "💡", title: "Get Insights", desc: "Receive automated reports and recommendations." },
-      { icon: "🚀", title: "Take Action", desc: "Make decisions and share results with your team." }
+      { icon: integration, title: "Connect Data Sources", desc: "Link databases, files, or APIs." },
+      { icon: barchart, title: "Analyze & Visualize", desc: "Explore data with AI-powered charts and models." },
+      { icon: lightbulb, title: "Get Insights", desc: "Receive automated reports and recommendations." },
+      { icon: robot, title: "Take Action", desc: "Make decisions and share results with your team." }
     ],
     overviewTitle: "What Makes Our Data Analytics Unique?",
     overviewDesc: "AI analytics tools accelerate your workflow, reduce manual effort, and reveal hidden patterns for better business outcomes.",
@@ -44,20 +56,20 @@ const translations = {
     overviewBtn: "Learn More",
     useCasesTitle: "AI Data Analytics Use Cases",
     useCases: [
-      { icon: "📈", title: "Business Intelligence", desc: "Track KPIs and performance." },
-      { icon: "📊", title: "Sales & Marketing", desc: "Analyze campaigns and customer behavior." },
-      { icon: "💰", title: "Finance", desc: "Forecast revenue and detect fraud." },
-      { icon: "🚚", title: "Operations", desc: "Optimize supply chain and inventory." },
-      { icon: "🏥", title: "Healthcare", desc: "Monitor patient data and outcomes." },
-      { icon: "👥", title: "HR & Talent", desc: "Analyze workforce trends and engagement." }
+      { icon: chart, title: "Business Intelligence", desc: "Track KPIs and performance." },
+      { icon: barchart, title: "Sales & Marketing", desc: "Analyze campaigns and customer behavior." },
+      { icon: money, title: "Finance", desc: "Forecast revenue and detect fraud." },
+      { icon: operations, title: "Operations", desc: "Optimize supply chain and inventory." },
+      { icon: healthcare, title: "Healthcare", desc: "Monitor patient data and outcomes." },
+      { icon: consultant, title: "HR & Talent", desc: "Analyze workforce trends and engagement." }
     ],
     highlightsTitle: "Data Analytics Highlights",
     highlightsDesc: "Discover the unique features that make AI analytics powerful, flexible, and easy to use for your business.",
     highlights: [
-      { icon: "📊", title: "Customizable Dashboards", desc: "Tailor views for any team." },
-      { icon: "🔔", title: "Real-Time Alerts", desc: "Get notified of important changes." },
-      { icon: "🤝", title: "Collaboration", desc: "Share insights and reports securely." },
-      { icon: "⚡", title: "Scalable Solutions", desc: "Handle big data with ease." }
+      { icon: barchart, title: "Customizable Dashboards", desc: "Tailor views for any team." },
+      { icon: notification, title: "Real-Time Alerts", desc: "Get notified of important changes." },
+      { icon: partners, title: "Collaboration", desc: "Share insights and reports securely." },
+      { icon: thunder, title: "Scalable Solutions", desc: "Handle big data with ease." }
     ],
     ctaTitle: "Ready to Analyze Your Data with AI?",
     ctaDesc: "Start exploring your data and unlock powerful insights for your business.",
@@ -85,10 +97,10 @@ const translations = {
     ],
     howWorksTitle: "كيف يعمل",
     howWorksSteps: [
-      { icon: "🔗", title: "ربط مصادر البيانات", desc: "ربط قواعد البيانات أو الملفات أو واجهات البرمجة." },
-      { icon: "📊", title: "حلل وصور", desc: "استكشف البيانات بمخططات ونماذج ذكية." },
-      { icon: "💡", title: "احصل على رؤى", desc: "استلم تقارير وتوصيات تلقائية." },
-      { icon: "🚀", title: "اتخذ إجراء", desc: "اتخذ قرارات وشارك النتائج مع فريقك." }
+      { icon: integration, title: "ربط مصادر البيانات", desc: "ربط قواعد البيانات أو الملفات أو واجهات البرمجة." },
+      { icon: barchart, title: "حلل وصور", desc: "استكشف البيانات بمخططات ونماذج ذكية." },
+      { icon: lightbulb, title: "احصل على رؤى", desc: "استلم تقارير وتوصيات تلقائية." },
+      { icon: robot, title: "اتخذ إجراء", desc: "اتخذ قرارات وشارك النتائج مع فريقك." }
     ],
     overviewTitle: "ما الذي يجعل تحليلاتنا فريدة؟",
     overviewDesc: "تسرّع أدوات التحليلات الذكية سير العمل، وتقلل الجهد اليدوي، وتكشف الأنماط الخفية لتحقيق نتائج أفضل.",
@@ -101,20 +113,20 @@ const translations = {
     overviewBtn: "اعرف المزيد",
     useCasesTitle: "حالات استخدام تحليلات البيانات الذكية",
     useCases: [
-      { icon: "📈", title: "ذكاء الأعمال", desc: "تتبع مؤشرات الأداء والنتائج." },
-      { icon: "📊", title: "المبيعات والتسويق", desc: "تحليل الحملات وسلوك العملاء." },
-      { icon: "💰", title: "المالية", desc: "توقع الإيرادات واكتشاف الاحتيال." },
-      { icon: "🚚", title: "العمليات", desc: "تحسين سلسلة التوريد والمخزون." },
-      { icon: "🏥", title: "الرعاية الصحية", desc: "مراقبة بيانات المرضى والنتائج." },
-      { icon: "👥", title: "الموارد البشرية", desc: "تحليل اتجاهات القوى العاملة والمشاركة." }
+      { icon: chart, title: "ذكاء الأعمال", desc: "تتبع مؤشرات الأداء والنتائج." },
+      { icon: barchart, title: "المبيعات والتسويق", desc: "تحليل الحملات وسلوك العملاء." },
+      { icon: money, title: "المالية", desc: "توقع الإيرادات واكتشاف الاحتيال." },
+      { icon: operations, title: "العمليات", desc: "تحسين سلسلة التوريد والمخزون." },
+      { icon: healthcare, title: "الرعاية الصحية", desc: "مراقبة بيانات المرضى والنتائج." },
+      { icon: consultant, title: "الموارد البشرية", desc: "تحليل اتجاهات القوى العاملة والمشاركة." }
     ],
     highlightsTitle: "أبرز ميزات التحليلات",
     highlightsDesc: "اكتشف الميزات الفريدة التي تجعل التحليلات الذكية قوية ومرنة وسهلة الاستخدام لأعمالك.",
     highlights: [
-      { icon: "📊", title: "لوحات معلومات قابلة للتخصيص", desc: "خصص العرض لكل فريق." },
-      { icon: "🔔", title: "تنبيهات لحظية", desc: "تلقي إشعارات بالتغيرات الهامة." },
-      { icon: "🤝", title: "تعاون", desc: "شارك الرؤى والتقارير بأمان." },
-      { icon: "⚡", title: "حلول قابلة للتوسع", desc: "إدارة البيانات الضخمة بسهولة." }
+      { icon: barchart, title: "لوحات معلومات قابلة للتخصيص", desc: "خصص العرض لكل فريق." },
+      { icon: notification, title: "تنبيهات لحظية", desc: "تلقي إشعارات بالتغيرات الهامة." },
+      { icon: partners, title: "تعاون", desc: "شارك الرؤى والتقارير بأمان." },
+      { icon: thunder, title: "حلول قابلة للتوسع", desc: "إدارة البيانات الضخمة بسهولة." }
     ],
     ctaTitle: "جاهز لتحليل بياناتك بالذكاء الاصطناعي؟",
     ctaDesc: "ابدأ في استكشاف بياناتك واكتشف رؤى قوية لأعمالك.",
@@ -142,10 +154,10 @@ const translations = {
     ],
     howWorksTitle: "איך זה עובד",
     howWorksSteps: [
-      { icon: "🔗", title: "חיבור מקורות נתונים", desc: "קישור מסדי נתונים, קבצים או APIs." },
-      { icon: "📊", title: "נתח והמחיש", desc: "חקור נתונים עם גרפים ומודלים חכמים." },
-      { icon: "💡", title: "קבל תובנות", desc: "קבל דוחות והמלצות אוטומטיות." },
-      { icon: "🚀", title: "פועל", desc: "קבל החלטות ושתף תוצאות עם הצוות." }
+      { icon: integration, title: "חיבור מקורות נתונים", desc: "קישור מסדי נתונים, קבצים או APIs." },
+      { icon: barchart, title: "נתח והמחיש", desc: "חקור נתונים עם גרפים ומודלים חכמים." },
+      { icon: lightbulb, title: "קבל תובנות", desc: "קבל דוחות והמלצות אוטומטיות." },
+      { icon: robot, title: "פועל", desc: "קבל החלטות ושתף תוצאות עם הצוות." }
     ],
     overviewTitle: "מה מייחד את האנליטיקה שלנו?",
     overviewDesc: "כלי האנליטיקה מאיצים את העבודה, מפחיתים מאמץ ידני ומגלים דפוסים נסתרים לתוצאות עסקיות טובות יותר.",
@@ -158,20 +170,20 @@ const translations = {
     overviewBtn: "למידע נוסף",
     useCasesTitle: "שימושים באנליטיקת נתונים חכמה",
     useCases: [
-      { icon: "📈", title: "בינה עסקית", desc: "מעקב אחרי מדדים וביצועים." },
-      { icon: "📊", title: "מכירות ושיווק", desc: "ניתוח קמפיינים והתנהגות לקוחות." },
-      { icon: "💰", title: "פיננסים", desc: "תחזית הכנסות וזיהוי הונאות." },
-      { icon: "🚚", title: "תפעול", desc: "אופטימיזציה של שרשרת אספקה ומלאי." },
-      { icon: "🏥", title: "בריאות", desc: "מעקב אחרי נתוני מטופלים ותוצאות." },
-      { icon: "👥", title: "משאבי אנוש", desc: "ניתוח מגמות עובדים ומעורבות." }
+      { icon: chart, title: "בינה עסקית", desc: "מעקב אחרי מדדים וביצועים." },
+      { icon: barchart, title: "מכירות ושיווק", desc: "ניתוח קמפיינים והתנהגות לקוחות." },
+      { icon: money, title: "פיננסים", desc: "תחזית הכנסות וזיהוי הונאות." },
+      { icon: operations, title: "תפעול", desc: "אופטימיזציה של שרשרת אספקה ומלאי." },
+      { icon: healthcare, title: "בריאות", desc: "מעקב אחרי נתוני מטופלים ותוצאות." },
+      { icon: consultant, title: "משאבי אנוש", desc: "ניתוח מגמות עובדים ומעורבות." }
     ],
     highlightsTitle: "הדגשים באנליטיקה",
     highlightsDesc: "גלה את התכונות שהופכות את האנליטיקה החכמה לעוצמתית, גמישה וקלה לשימוש לעסק שלך.",
     highlights: [
-      { icon: "📊", title: "לוחות מחוונים מותאמים", desc: "התאם תצוגות לכל צוות." },
-      { icon: "🔔", title: "התראות בזמן אמת", desc: "קבל התראות על שינויים חשובים." },
-      { icon: "🤝", title: "שיתוף פעולה", desc: "שתף תובנות ודוחות בבטחה." },
-      { icon: "⚡", title: "פתרונות גמישים", desc: "טפל בנתוני עתק בקלות." }
+      { icon: barchart, title: "לוחות מחוונים מותאמים", desc: "התאם תצוגות לכל צוות." },
+      { icon: notification, title: "התראות בזמן אמת", desc: "קבל התראות על שינויים חשובים." },
+      { icon: partners, title: "שיתוף פעולה", desc: "שתף תובנות ודוחות בבטחה." },
+      { icon: thunder, title: "פתרונות גמישים", desc: "טפל בנתוני עתק בקלות." }
     ],
     ctaTitle: "מוכן לנתח נתונים עם AI?",
     ctaDesc: "התחל לחקור נתונים ופתח תובנות חדשות לעסק שלך.",
@@ -295,7 +307,7 @@ function DataAnalytics() {
       </section>
 
       {/* How It Works */}
-      <section className="py-8 px-4 bg-white dark:bg-black">
+      <section className="py-8 px-4 bg-purple-50 dark:bg-black">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-black dark:text-white">{t.howWorksTitle}</h2>
           <div className="flex flex-col md:flex-row items-center justify-center gap-8">
@@ -303,7 +315,7 @@ function DataAnalytics() {
               <div key={idx} className="flip-card w-64 h-64">
                 <div className="flip-card-inner group relative w-full h-full">
                   <div className="flip-card-front absolute w-full h-full bg-white dark:bg-gray-900 rounded-2xl shadow-lg border border-purple-100 dark:border-purple-700 flex flex-col items-center justify-center text-center transition-transform duration-500 group-hover:rotate-y-180">
-                    <div className="w-16 h-16 flex items-center justify-center rounded-full bg-purple-700 dark:bg-purple-400 text-white text-3xl font-bold mb-4">{step.icon}</div>
+                    <div className="w-16 h-16 flex items-center justify-center rounded-full bg-purple-700 dark:bg-purple-400 text-white text-3xl font-bold mb-4"><img src={step.icon} alt={step.title} className="w-8 h-8 object-contain" /></div>
                     <h3 className="text-xl font-bold text-purple-700 dark:text-purple-300 mb-2">{step.title}</h3>
                     <p className="text-gray-700 dark:text-gray-300">Step {idx + 1}</p>
                   </div>
@@ -372,7 +384,7 @@ function DataAnalytics() {
                 transition={{ duration: 0.6, delay: idx * 0.12 }}
                 viewport={{ once: true }}
               >
-                <div className="w-14 h-14 flex items-center justify-center rounded-full bg-purple-700 dark:bg-purple-400 text-white dark:text-black text-3xl font-bold mb-4">{use.icon}</div>
+                <div className="w-14 h-14 flex items-center justify-center rounded-full bg-purple-700 dark:bg-purple-400 text-white dark:text-black text-3xl font-bold mb-4"><img src={use.icon} alt={use.title} className="w-8 h-8 object-contain" /></div>
                 <h3 className="text-xl font-bold text-purple-700 dark:text-purple-300 mb-2 text-center">{use.title}</h3>
                 <p className="text-black dark:text-white text-sm text-center">{use.desc}</p>
               </motion.div>
@@ -386,7 +398,7 @@ function DataAnalytics() {
       </section>
 
       {/* Highlights Section */}
-      <section className="py-10 px-4 bg-white dark:bg-black">
+      <section className="py-10 px-4 bg-purple-50 dark:bg-black">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2 w-full mb-8 md:mb-0 flex flex-col justify-center">
             <h2 className="text-5xl font-extrabold text-black dark:text-white mb-6 leading-tight">
@@ -400,7 +412,7 @@ function DataAnalytics() {
             <div className="absolute left-4 top-0 bottom-0 w-1 bg-purple-300 dark:bg-purple-700 rounded-full"></div>
             {t.highlights.map((f, i) => (
               <div key={i} className="flex items-center mb-10 last:mb-0 relative z-10">
-                <div className="w-10 h-10 flex items-center justify-center rounded-full bg-purple-700 dark:bg-purple-400 text-white text-xl font-bold mr-6 shadow-lg">{f.icon}</div>
+                <div className="w-10 h-10 flex items-center justify-center rounded-full bg-purple-700 dark:bg-purple-400 text-white text-xl font-bold mr-6 shadow-lg"><img src={f.icon} alt={f.title} className="w-8 h-8 object-contain" /></div>
                 <div>
                   <h4 className="text-lg font-bold text-black dark:text-white mb-1">{f.title}</h4>
                   <p className="text-black dark:text-white text-sm max-w-xs">{f.desc}</p>
